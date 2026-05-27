@@ -8,19 +8,19 @@ export default {
     extend: {
       colors: {
         forest: {
-          900: 'var(--color-forest-900)',
-          800: 'var(--color-forest-800)',
-          700: 'var(--color-forest-700)',
+          900: 'rgb(var(--color-forest-900) / <alpha-value>)',
+          800: 'rgb(var(--color-forest-800) / <alpha-value>)',
+          700: 'rgb(var(--color-forest-700) / <alpha-value>)',
         },
         gold: {
-          DEFAULT: 'var(--color-gold)',
-          light: 'var(--color-gold-light)',
+          DEFAULT: 'rgb(var(--color-gold) / <alpha-value>)',
+          light: 'rgb(var(--color-gold-light) / <alpha-value>)',
         },
-        cream: 'var(--color-cream)',
-        parchment: 'var(--color-parchment)',
+        cream: 'rgb(var(--color-cream) / <alpha-value>)',
+        parchment: 'rgb(var(--color-parchment) / <alpha-value>)',
         muted: '#6B7B6E',
-        line: 'var(--color-line)',
-        ink: 'var(--color-ink)',
+        line: 'rgb(var(--color-line) / <alpha-value>)',
+        ink: 'rgb(var(--color-ink) / <alpha-value>)',
       },
       fontFamily: {
         serif: ['Cormorant Garamond', 'Georgia', 'serif'],

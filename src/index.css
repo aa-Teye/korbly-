@@ -5,29 +5,37 @@
 @tailwind utilities;
 
 :root {
-  /* Default Forest Green Institutional Theme */
-  --color-forest-900: #0E2318;
-  --color-forest-800: #1A4033;
-  --color-forest-700: #2D6A4F;
-  --color-gold: #C8963E;
-  --color-gold-light: #E5B96A;
-  --color-cream: #F6F2E8;
-  --color-parchment: #EDE8DA;
-  --color-ink: #09130F;
-  --color-line: #D5CFC0;
+  /* Default Forest Green Institutional Theme (configured as RGB channels for full opacity support) */
+  --color-forest-900: 14 35 24;      /* #0E2318 */
+  --color-forest-800: 26 64 51;      /* #1A4033 */
+  --color-forest-700: 45 106 79;     /* #2D6A4F */
+  --color-gold: 200 150 62;          /* #C8963E */
+  --color-gold-light: 229 185 106;   /* #E5B96A */
+  --color-cream: 246 242 232;        /* #F6F2E8 */
+  --color-parchment: 237 232 218;    /* #EDE8DA */
+  --color-ink: 9 19 15;              /* #09130F */
+  --color-line: 213 207 192;         /* #D5CFC0 */
+
+  /* Theme-specific gradient overlays */
+  --hero-gradient: linear-gradient(105deg, rgba(9,19,15,0.92) 0%, rgba(14,35,24,0.78) 45%, rgba(14,35,24,0.55) 100%);
+  --sub-hero-gradient: linear-gradient(90deg, rgba(9,19,15,0.85) 0%, rgba(14,35,24,0.55) 100%);
 }
 
 [data-theme='navy'] {
   /* Dynamic Midnight Navy Theme (matching your design screenshot) */
-  --color-forest-900: #091F2F; /* Deep premium navy blue */
-  --color-forest-800: #123047; /* Slate dark navy */
-  --color-forest-700: #1F4E73; /* Rich blue accents */
-  --color-gold: #C8963E; /* Preserved warm gold */
-  --color-gold-light: #E5B96A;
-  --color-cream: #EBF2F7; /* Ice white background */
-  --color-parchment: #DFE7EC; /* Structured blue-parchment card */
-  --color-ink: #05101A; /* Inky text and shapes */
-  --color-line: #BCCBD6; /* Cool borders */
+  --color-forest-900: 9 31 47;       /* #091F2F */
+  --color-forest-800: 18 48 71;      /* #123047 */
+  --color-forest-700: 31 78 115;     /* #1F4E73 */
+  --color-gold: 200 150 62;          /* Keep gold accent */
+  --color-gold-light: 229 185 106;
+  --color-cream: 235 242 247;        /* #EBF2F7 ice-blue */
+  --color-parchment: 223 231 236;    /* #DFE7EC blue-parchment */
+  --color-ink: 5 16 26;              /* #05101A deep ink */
+  --color-line: 188 203 214;         /* #BCCBD6 cool line border */
+
+  /* Dynamic Navy gradient overlays */
+  --hero-gradient: linear-gradient(105deg, rgba(5,15,25,0.94) 0%, rgba(9,31,47,0.82) 45%, rgba(18,48,71,0.6) 100%);
+  --sub-hero-gradient: linear-gradient(90deg, rgba(5,15,25,0.88) 0%, rgba(9,31,47,0.6) 100%);
 }
 
 * {

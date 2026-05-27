@@ -47,7 +47,7 @@ export default function AboutPage() {
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80&auto=format&fit=crop')` }}
         />
         <div className="absolute inset-0"
-          style={{ background: 'linear-gradient(90deg, rgba(9,19,15,0.85) 0%, rgba(14,35,24,0.55) 100%)' }}
+          style={{ background: 'var(--sub-hero-gradient)' }}
         />
         <div className="relative max-w-7xl mx-auto px-8 h-full flex items-center">
           <div className="text-white max-w-2xl">
