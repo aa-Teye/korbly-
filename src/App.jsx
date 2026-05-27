@@ -13,7 +13,7 @@ export default function App() {
   return (
     <HashRouter>
       <Header />
-      <main>
+      <main className="pt-[72px]">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/approach" element={<ApproachPage />} />
