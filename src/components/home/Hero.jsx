@@ -23,20 +23,20 @@ const slides = [
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('korbly-theme') || 'forest'
+    return localStorage.getItem('korbly-theme') || 'burgundy'
   })
 
   // Synchronize state with window custom events
   useEffect(() => {
     const handleThemeChange = () => {
-      setTheme(localStorage.getItem('korbly-theme') || 'forest')
+      setTheme(localStorage.getItem('korbly-theme') || 'burgundy')
     }
     window.addEventListener('korbly-theme-change', handleThemeChange)
     return () => window.removeEventListener('korbly-theme-change', handleThemeChange)
   }, [])
 
   const toggleTheme = () => {
-    const nextTheme = theme === 'forest' ? 'navy' : 'forest'
+    const nextTheme = theme === 'burgundy' ? 'navy' : 'burgundy'
     document.documentElement.setAttribute('data-theme', nextTheme)
     localStorage.setItem('korbly-theme', nextTheme)
     setTheme(nextTheme)
@@ -135,7 +135,7 @@ export default function Hero() {
                 <path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z" />
                 <path d="M12 22V4c0 0 7 6.7 7 11a7 7 0 0 1-7 7z" fill="currentColor" />
               </svg>
-              Theme: {theme === 'forest' ? 'Forest Green' : 'Midnight Navy'}
+              Theme: {theme === 'burgundy' ? 'Regal Burgundy' : 'Midnight Navy'}
             </button>
             <span className="w-1.5 h-1.5 rounded-full bg-gold animate-ping" />
           </div>

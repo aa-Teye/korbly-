@@ -5,20 +5,20 @@
 @tailwind utilities;
 
 :root {
-  /* Default Forest Green Institutional Theme (configured as RGB channels for full opacity support) */
-  --color-forest-900: 14 35 24;      /* #0E2318 */
-  --color-forest-800: 26 64 51;      /* #1A4033 */
-  --color-forest-700: 45 106 79;     /* #2D6A4F */
+  /* Regal Burgundy Institutional Theme (configured as RGB channels for full opacity support) */
+  --color-forest-900: 32 8 14;      /* #20080E - Deep Wine/Burgundy */
+  --color-forest-800: 56 14 24;      /* #380E18 - Medium Burgundy */
+  --color-forest-700: 92 29 42;      /* #5C1D2A - Warm Crimson Accent */
   --color-gold: 200 150 62;          /* #C8963E */
   --color-gold-light: 229 185 106;   /* #E5B96A */
-  --color-cream: 246 242 232;        /* #F6F2E8 */
-  --color-parchment: 237 232 218;    /* #EDE8DA */
-  --color-ink: 9 19 15;              /* #09130F */
+  --color-cream: 248 245 238;        /* #F8F5EE - Premium Soft Cream */
+  --color-parchment: 239 234 220;    /* #EFEADC - Soft Rich Parchment */
+  --color-ink: 16 4 7;              /* #100407 - Inky Burgundy-Black */
   --color-line: 213 207 192;         /* #D5CFC0 */
 
-  /* Theme-specific gradient overlays */
-  --hero-gradient: linear-gradient(105deg, rgba(9,19,15,0.92) 0%, rgba(14,35,24,0.78) 45%, rgba(14,35,24,0.55) 100%);
-  --sub-hero-gradient: linear-gradient(90deg, rgba(9,19,15,0.85) 0%, rgba(14,35,24,0.55) 100%);
+  /* Theme-specific Burgundy gradient overlays */
+  --hero-gradient: linear-gradient(105deg, rgba(20,5,9,0.94) 0%, rgba(32,8,14,0.80) 45%, rgba(56,14,24,0.55) 100%);
+  --sub-hero-gradient: linear-gradient(90deg, rgba(20,5,9,0.88) 0%, rgba(32,8,14,0.58) 100%);
 }
 
 [data-theme='navy'] {
