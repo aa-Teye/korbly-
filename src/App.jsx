@@ -8,6 +8,7 @@ import StrategiesPage from './pages/StrategiesPage'
 import ResourcesPage from './pages/ResourcesPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import InvestorPortalPage from './pages/InvestorPortalPage'
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/investor-portal" element={<InvestorPortalPage />} />
         </Routes>
       </main>
       <Footer />

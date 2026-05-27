@@ -152,10 +152,10 @@ export default function Hero() {
               </svg>
             </Link>
             <Link
-              to="/contact"
+              to="/investor-portal"
               className="inline-flex items-center gap-3 font-sans text-[0.78rem] font-light tracking-[0.08em] uppercase px-8 py-4 text-white/85 border border-white/20 hover:border-white/60 hover:text-white transition-all duration-200 no-underline"
             >
-              Investor Relations
+              Investor Portal
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M13 5l7 7-7 7"/>
               </svg>
