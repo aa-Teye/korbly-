@@ -13,6 +13,21 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('korbly-theme') || 'forest'
+  })
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('korbly-theme', theme)
+    // Dispatch custom event to let other components know the theme changed
+    window.dispatchEvent(new Event('korbly-theme-change'))
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'forest' ? 'navy' : 'forest'))
+  }
+
   const navLinks = [
     { label: 'Our Firm', path: '/about' },
     { label: 'Investment Approach', path: '/approach' },
@@ -72,6 +87,20 @@ export default function Header() {
           >
             Contact Us
           </Link>
+          
+          {/* Theme Droplet Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="w-8 h-8 rounded-full border border-line flex items-center justify-center text-forest-900 hover:border-gold hover:text-gold transition-all duration-200 focus:outline-none bg-cream/10"
+            title={theme === 'forest' ? 'Switch to Midnight Navy theme' : 'Switch to Forest Green theme'}
+            aria-label="Toggle color theme"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z" />
+              <path d="M12 22V4c0 0 7 6.7 7 11a7 7 0 0 1-7 7z" fill="currentColor" className={theme === 'navy' ? 'text-gold' : 'text-forest-700'} />
+            </svg>
+          </button>
+
           <button
             aria-label="Search"
             className="text-forest-900 hover:text-forest-700 transition-colors"

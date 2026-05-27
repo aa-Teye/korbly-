@@ -8,19 +8,19 @@ export default {
     extend: {
       colors: {
         forest: {
-          900: '#0E2318',
-          800: '#1A4033',
-          700: '#2D6A4F',
+          900: 'var(--color-forest-900)',
+          800: 'var(--color-forest-800)',
+          700: 'var(--color-forest-700)',
         },
         gold: {
-          DEFAULT: '#C8963E',
-          light: '#E5B96A',
+          DEFAULT: 'var(--color-gold)',
+          light: 'var(--color-gold-light)',
         },
-        cream: '#F6F2E8',
-        parchment: '#EDE8DA',
+        cream: 'var(--color-cream)',
+        parchment: 'var(--color-parchment)',
         muted: '#6B7B6E',
-        line: '#D5CFC0',
-        ink: '#09130F',
+        line: 'var(--color-line)',
+        ink: 'var(--color-ink)',
       },
       fontFamily: {
         serif: ['Cormorant Garamond', 'Georgia', 'serif'],

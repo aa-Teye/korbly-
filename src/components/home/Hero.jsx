@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom'
 
 const slides = [
   {
+    image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=1920&q=85&auto=format&fit=crop',
+    title: 'Macro Financial Skyline at Dusk',
+  },
+  {
     image: 'https://images.unsplash.com/photo-1580234811497-9df7fd2f357e?w=1920&q=85&auto=format&fit=crop',
     title: 'Macro Intelligence & Technology',
   },
   {
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=85&auto=format&fit=crop',
     title: 'Primary Industrial Infrastructure',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=85&auto=format&fit=crop',
-    title: 'Capital Markets & Asset Distribution',
   },
   {
     image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1920&q=85&auto=format&fit=crop',
@@ -22,6 +22,26 @@ const slides = [
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('korbly-theme') || 'forest'
+  })
+
+  // Synchronize state with window custom events
+  useEffect(() => {
+    const handleThemeChange = () => {
+      setTheme(localStorage.getItem('korbly-theme') || 'forest')
+    }
+    window.addEventListener('korbly-theme-change', handleThemeChange)
+    return () => window.removeEventListener('korbly-theme-change', handleThemeChange)
+  }, [])
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'forest' ? 'navy' : 'forest'
+    document.documentElement.setAttribute('data-theme', nextTheme)
+    localStorage.setItem('korbly-theme', nextTheme)
+    setTheme(nextTheme)
+    window.dispatchEvent(new Event('korbly-theme-change'))
+  }
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -38,7 +58,7 @@ export default function Hero() {
         <div
           key={slide.image}
           className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
-            idx === currentSlide ? 'opacity-40' : 'opacity-0'
+            idx === currentSlide ? 'opacity-45' : 'opacity-0'
           } mix-blend-overlay`}
           style={{
             backgroundImage: `url('${slide.image}')`
@@ -46,10 +66,10 @@ export default function Hero() {
         />
       ))}
 
-      {/* Dark Overlay */}
+      {/* Dark Overlay gradient exactly configured */}
       <div className="absolute inset-0 z-[1]"
         style={{
-          background: 'linear-gradient(105deg, rgba(9,19,15,0.88) 0%, rgba(14,35,24,0.75) 45%, rgba(14,35,24,0.55) 100%)'
+          background: 'linear-gradient(105deg, rgba(9,19,15,0.92) 0%, rgba(14,35,24,0.78) 45%, rgba(14,35,24,0.58) 100%)'
         }}
       />
 
@@ -100,25 +120,40 @@ export default function Hero() {
           {/* Lead text */}
           <p className="mt-8 max-w-xl font-sans text-[0.95rem] font-light leading-relaxed text-white/75">
             Korbly Investment Partners is a private investment firm 
-            focused on generating enduring value across Africa through 
-            discipline, quantitative precision, and aligned partnership. 
-            Based in Accra, Ghana.
+            focused on generating enduring value through discipline, 
+            experience, and alignment. Based in Accra, Ghana.
           </p>
 
-          {/* CTA Buttons */}
+          {/* Theme Switcher Quick Toggle directly in Hero */}
+          <div className="mt-6 inline-flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 hover:border-gold/30 transition-colors duration-200">
+            <button
+              onClick={toggleTheme}
+              className="text-gold font-sans text-[0.68rem] font-semibold uppercase tracking-wider flex items-center gap-2 focus:outline-none"
+              title="Click to switch dynamic theme color"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="animate-spin-slow">
+                <path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z" />
+                <path d="M12 22V4c0 0 7 6.7 7 11a7 7 0 0 1-7 7z" fill="currentColor" />
+              </svg>
+              Theme: {theme === 'forest' ? 'Forest Green' : 'Midnight Navy'}
+            </button>
+            <span className="w-1.5 h-1.5 rounded-full bg-gold animate-ping" />
+          </div>
+
+          {/* CTA Buttons - Matching Screenshot */}
           <div className="mt-10 flex flex-wrap gap-5">
             <Link
               to="/approach"
-              className="inline-flex items-center gap-3 font-sans text-[0.78rem] font-semibold tracking-[0.08em] uppercase px-8 py-4 bg-gold text-forest-900 hover:bg-gold-light transition-colors duration-200 no-underline"
+              className="inline-flex items-center gap-4 font-sans text-[0.8rem] font-semibold tracking-wider px-8 py-4 bg-white text-ink hover:bg-white/90 transition-all duration-200 no-underline shadow-md"
             >
               Our Approach
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M5 12h14M13 5l7 7-7 7"/>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                <path d="M9 5l7 7-7 7"/>
               </svg>
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 font-sans text-[0.78rem] font-light tracking-[0.08em] uppercase px-8 py-4 text-white/85 border border-white/25 hover:border-white/60 hover:text-white transition-all duration-200 no-underline"
+              className="inline-flex items-center gap-3 font-sans text-[0.78rem] font-light tracking-[0.08em] uppercase px-8 py-4 text-white/85 border border-white/20 hover:border-white/60 hover:text-white transition-all duration-200 no-underline"
             >
               Investor Relations
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -128,14 +163,14 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right - Philosophy Card */}
+        {/* Right - Philosophy Card - Styled Exactly like Screenshot */}
         <div className="lg:col-span-4 lg:col-start-9">
           <div
-            className="p-10 border border-gold/20 backdrop-blur-xl animate-fade-in"
-            style={{ background: 'rgba(6,18,12,0.75)' }}
+            className="p-10 border border-white/10 backdrop-blur-xl relative overflow-hidden"
+            style={{ background: 'rgba(9,30,45,0.78)' }}
           >
             {/* Card eyebrow */}
-            <span className="font-sans text-[0.65rem] font-medium tracking-[0.22em] uppercase text-gold">
+            <span className="font-sans text-[0.65rem] font-medium tracking-[0.22em] uppercase text-white/70">
               Our Philosophy
             </span>
 
@@ -145,7 +180,7 @@ export default function Hero() {
             </h2>
 
             {/* Divider */}
-            <div className="my-7 border-t border-gold/20" />
+            <div className="my-7 border-t border-white/10" />
 
             {/* Stats */}
             <div className="flex flex-col gap-0">
@@ -161,7 +196,7 @@ export default function Hero() {
                   <span className="font-sans text-[0.72rem] text-white/50">
                     {stat.label}
                   </span>
-                  <span className="font-serif text-[1.4rem] font-medium text-gold/80">
+                  <span className="font-serif text-[1.4rem] font-medium text-gold/90">
                     {stat.value}
                     <span className="font-sans text-[0.72rem] text-white/45 ml-1">
                       {stat.suffix}
@@ -171,15 +206,15 @@ export default function Hero() {
               ))}
             </div>
 
-            {/* Card link */}
-            <div className="mt-7 pt-5 border-t border-gold/20">
+            {/* Card link with customized circle-wrapped chevron */}
+            <div className="mt-7 pt-5 border-t border-white/10">
               <Link
                 to="/approach"
-                className="flex items-center justify-between w-full font-sans text-[0.8rem] text-white/80 hover:text-gold/80 transition-colors duration-200 no-underline group"
+                className="flex items-center justify-between w-full font-sans text-[0.8rem] text-white/80 hover:text-gold transition-colors duration-200 no-underline group"
               >
                 <span>Learn more about our investment philosophy.</span>
-                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-current ml-4 flex-shrink-0">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-white/20 group-hover:border-gold group-hover:text-gold ml-4 flex-shrink-0 transition-colors">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M5 12h14M13 5l7 7-7 7"/>
                   </svg>
                 </span>
