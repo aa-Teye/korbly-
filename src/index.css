@@ -1,42 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  /* Flagship Sapphire Blue Theme (configured as RGB channels for full opacity support) */
-  --color-forest-900: 10 25 47;      /* #0A192F - Deep Sapphire Blue */
-  --color-forest-800: 23 42 69;      /* #172A45 - Medium Dark Blue */
-  --color-forest-700: 32 82 149;     /* #205295 - Dynamic Royal Blue Highlight */
-  --color-gold: 200 150 62;          /* #C8963E */
-  --color-gold-light: 229 185 106;   /* #E5B96A */
-  --color-cream: 240 244 248;        /* #F0F4F8 - Ice Blue Soft Cream */
-  --color-parchment: 220 228 236;    /* #DCE4EC - Cool Slate Parchment */
-  --color-ink: 10 20 30;             /* #0A141E - Dark Sapphire Ink */
-  --color-line: 198 208 218;         /* #C6D0DA - Crisp Line Outline */
-
-  /* Breathtakingly light, transparent blue gradient overlays */
-  --hero-gradient: linear-gradient(105deg, rgba(10,25,47,0.75) 0%, rgba(10,25,47,0.48) 45%, rgba(23,42,69,0.30) 100%);
-  --sub-hero-gradient: linear-gradient(90deg, rgba(10,25,47,0.80) 0%, rgba(10,25,47,0.40) 100%);
-}
-
-[data-theme='green'] {
-  /* Sleek Emerald Green Theme */
-  --color-forest-900: 6 30 20;       /* #061E14 - Deep Emerald Green */
-  --color-forest-800: 12 62 38;      /* #0C3E26 - Medium Dark Green */
-  --color-forest-700: 27 127 82;     /* #1B7F52 - Dynamic Jade Accent */
-  --color-gold: 200 150 62;          /* Keep gold accent */
-  --color-gold-light: 229 185 106;
-  --color-cream: 242 248 244;        /* #F2F8F4 - Soft Sage Cream */
-  --color-parchment: 222 236 228;    /* #DEECE4 - Sage Parchment */
-  --color-ink: 5 20 12;              /* #05140C - Deep Forest Ink */
-  --color-line: 198 218 206;         /* #C6DACE - Soft Green Line border */
-
-  /* Breathtakingly light, transparent green gradient overlays */
-  --hero-gradient: linear-gradient(105deg, rgba(6,30,20,0.75) 0%, rgba(6,30,20,0.48) 45%, rgba(12,62,38,0.30) 100%);
-  --sub-hero-gradient: linear-gradient(90deg, rgba(6,30,20,0.80) 0%, rgba(6,30,20,0.40) 100%);
-}
 
 * {
   box-sizing: border-box;
@@ -46,12 +12,11 @@
 
 html {
   scroll-behavior: smooth;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 body {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  color: var(--color-ink);
-  background: #FDFCF9;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  color: #0f1a2c;
+  background: #ffffff;
   -webkit-font-smoothing: antialiased;
 }

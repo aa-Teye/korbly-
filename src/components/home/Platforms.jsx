@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useTheme } from '../../context/ThemeContext'
 
 const platforms = [
   {
@@ -42,6 +43,8 @@ const platforms = [
 export default function Platforms() {
   const [visible, setVisible] = useState(false)
   const ref = useRef(null)
+  const { theme } = useTheme()
+  const primary = theme === 'navy' ? 'navy' : 'burgundy'
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -53,24 +56,23 @@ export default function Platforms() {
   }, [])
 
   return (
-    <section className="bg-forest-900" ref={ref}>
-      <div className="max-w-7xl mx-auto px-8 py-24">
+    <section className={`bg-${theme === 'navy' ? 'navy' : 'burgundy'}-900`} ref={ref}>
+      <div className="max-w-7xl mx-auto px-8 py-14">
         
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end mb-16">
           <div className={`transition-all duration-700 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <span className="font-sans text-[0.65rem] font-medium tracking-[0.22em] uppercase text-gold">
+            <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-600`}>
               Integrated Architecture
             </span>
-            <h2 className="mt-4 font-serif font-light text-white leading-tight"
-              style={{ fontSize: 'clamp(2.25rem, 3vw, 3.25rem)' }}
+            <h2 className="mt-4 font-serif font-medium text-white leading-tight text-2xl"
             >
               Four Platforms.<br />One Operating System.
             </h2>
           </div>
-          <p className={`font-sans text-[0.88rem] font-light leading-relaxed text-white/65 transition-all duration-700 delay-100 ${
+          <p className={`font-sans text-sm font-light leading-relaxed text-white/65 transition-all duration-700 delay-100 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             No existing African-owned institution combines systematic 
@@ -81,20 +83,20 @@ export default function Platforms() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gold/15">
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-${primary}-600/15`}>
           {platforms.map((platform, i) => (
             <div
               key={platform.num}
-              className={`bg-ink/90 p-10 hover:bg-forest-800 transition-all duration-300 group relative overflow-hidden ${
+              className={`bg-ink/90 p-10 hover:bg-${primary}-800 transition-all duration-300 group relative overflow-hidden ${
                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: i * 100 + 'ms' }}
             >
-              {/* Top gold line on hover */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              {/* Top theme accent line on hover */}
+              <div className={`absolute top-0 left-0 right-0 h-px bg-${primary}-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`} />
               
               {/* Number */}
-              <div className="font-serif text-6xl font-light text-gold/10 leading-none mb-4 select-none">
+              <div className={`font-serif text-6xl font-light text-${primary}-600/10 leading-none mb-4 select-none`}>
                 {platform.num}
               </div>
 
@@ -104,7 +106,7 @@ export default function Platforms() {
               </h3>
 
               {/* Description */}
-              <p className="font-sans text-[0.8rem] font-light leading-relaxed text-white/60">
+              <p className="font-sans text-sm font-light leading-relaxed text-white/60">
                 {platform.desc}
               </p>
 
@@ -113,7 +115,7 @@ export default function Platforms() {
                 {platform.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-sans text-[0.62rem] font-medium tracking-[0.1em] uppercase text-gold border border-gold/30 px-3 py-1"
+                    className={`font-sans text-[0.62rem] font-medium tracking-[0.1em] uppercase text-${primary}-600 border border-${primary}-600/30 px-3 py-1`}
                   >
                     {tag}
                   </span>

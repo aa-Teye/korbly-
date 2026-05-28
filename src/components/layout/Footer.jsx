@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom'
+import { useTheme } from '../../context/ThemeContext'
 
 export default function Footer() {
+  const { theme } = useTheme()
+  const primary = theme === 'navy' ? 'navy' : 'burgundy'
+
   return (
     <footer className="bg-ink text-white/65">
       
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-8 py-20 grid grid-cols-2 md:grid-cols-5 gap-10">
+      <div className="max-w-7xl mx-auto px-8 py-14 grid grid-cols-2 md:grid-cols-5 gap-10">
         
         {/* Brand Column */}
         <div className="col-span-2 md:col-span-1">
@@ -15,7 +19,7 @@ export default function Footer() {
           <div className="font-sans text-[0.55rem] font-medium tracking-[0.28em] uppercase text-white/40 mt-1">
             Investment Partners
           </div>
-          <p className="mt-5 font-sans text-[0.8rem] font-light leading-relaxed text-white/45 max-w-[280px]">
+          <p className="mt-5 font-sans text-xs font-light leading-relaxed text-white/45 max-w-[280px]">
             Africa's first systematic merchant bank. 
             Combining macro intelligence, quantitative 
             structuring, and institutional discipline 
@@ -25,7 +29,7 @@ export default function Footer() {
 
         {/* Our Firm */}
         <div>
-          <div className="font-sans text-[0.62rem] font-semibold tracking-[0.2em] uppercase text-gold mb-5">
+          <div className={`font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-${primary}-600 mb-5`}>
             Our Firm
           </div>
           <ul className="flex flex-col gap-3">
@@ -33,7 +37,7 @@ export default function Footer() {
               <li key={item}>
                 <Link
                   to="/about"
-                  className="font-sans text-[0.8rem] font-light text-white/55 hover:text-white transition-colors duration-150 no-underline"
+                  className="font-sans text-xs font-light text-white/55 hover:text-white transition-colors duration-150 no-underline"
                 >
                   {item}
                 </Link>
@@ -44,7 +48,7 @@ export default function Footer() {
 
         {/* Strategies */}
         <div>
-          <div className="font-sans text-[0.62rem] font-semibold tracking-[0.2em] uppercase text-gold mb-5">
+          <div className={`font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-${primary}-600 mb-5`}>
             Strategies
           </div>
           <ul className="flex flex-col gap-3">
@@ -57,7 +61,7 @@ export default function Footer() {
               <li key={item.label}>
                 <Link
                   to={item.path}
-                  className="font-sans text-[0.8rem] font-light text-white/55 hover:text-white transition-colors duration-150 no-underline"
+                  className="font-sans text-xs font-light text-white/55 hover:text-white transition-colors duration-150 no-underline"
                 >
                   {item.label}
                 </Link>
@@ -68,7 +72,7 @@ export default function Footer() {
 
         {/* Resources */}
         <div>
-          <div className="font-sans text-[0.62rem] font-semibold tracking-[0.2em] uppercase text-gold mb-5">
+          <div className={`font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-${primary}-600 mb-5`}>
             Resources
           </div>
           <ul className="flex flex-col gap-3">
@@ -81,7 +85,7 @@ export default function Footer() {
               <li key={item.label}>
                 <Link
                   to={item.path}
-                  className="font-sans text-[0.8rem] font-light text-white/55 hover:text-white transition-colors duration-150 no-underline"
+                  className="font-sans text-xs font-light text-white/55 hover:text-white transition-colors duration-150 no-underline"
                 >
                   {item.label}
                 </Link>
@@ -92,10 +96,10 @@ export default function Footer() {
 
         {/* Connect */}
         <div>
-          <div className="font-sans text-[0.62rem] font-semibold tracking-[0.2em] uppercase text-gold mb-5">
+          <div className={`font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-${primary}-600 mb-5`}>
             Connect
           </div>
-          <ul className="flex flex-col gap-3 text-[0.8rem] font-light">
+          <ul className="flex flex-col gap-3 text-xs font-light">
             <li>
               <a
                 href="mailto:info@korblygroup.com"
@@ -114,7 +118,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-8 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-          <div className="font-sans text-[0.72rem] text-white/30">
+          <div className="font-sans text-xs text-white/30">
             © 2026 Korbly Investment Partners. All rights reserved.
           </div>
           <div className="flex gap-6">
@@ -122,7 +126,7 @@ export default function Footer() {
               <a
                 key={item}
                 href="#"
-                className="font-sans text-[0.72rem] text-white/30 hover:text-white/65 transition-colors duration-150 no-underline"
+                className="font-sans text-xs text-white/30 hover:text-white/65 transition-colors duration-150 no-underline"
               >
                 {item}
               </a>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useTheme } from '../../context/ThemeContext'
 
 const strategies = [
   {
@@ -28,26 +29,28 @@ const strategies = [
 ]
 
 export default function Performance() {
+  const { theme } = useTheme()
+  const primary = theme === 'navy' ? 'navy' : 'burgundy'
+
   return (
-    <section className="bg-parchment border-t border-line">
-      <div className="max-w-7xl mx-auto px-8 py-24">
+    <section className="bg-paper border-t border-b border-line">
+      <div className="max-w-7xl mx-auto px-8 py-14">
         <div className="flex justify-between items-end mb-10">
           <div>
-            <span className="font-sans text-[0.65rem] font-medium tracking-[0.22em] uppercase text-gold">
+            <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-700`}>
               Track Record
             </span>
-            <h2 className="mt-3 font-serif font-light text-forest-900"
-              style={{ fontSize: 'clamp(2rem, 3vw, 3rem)' }}
+            <h2 className={`mt-3 font-serif text-2xl font-medium text-${primary}-900`}
             >
               Strategy Performance
             </h2>
-            <p className="font-sans text-[0.75rem] text-muted mt-1">
+            <p className="font-sans text-xs text-muted mt-1">
               As of March 31, 2026
             </p>
           </div>
           <Link
             to="/resources"
-            className="inline-flex items-center gap-2 font-sans text-[0.78rem] font-medium tracking-[0.08em] uppercase text-forest-700 border-b border-transparent hover:border-gold hover:text-gold transition-all duration-200 no-underline whitespace-nowrap pb-px"
+            className={`inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-${primary}-700 border-b border-transparent hover:border-${primary}-600 hover:text-${primary}-600 transition-all duration-200 no-underline whitespace-nowrap pb-px`}
           >
             View performance disclosures
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -58,11 +61,11 @@ export default function Performance() {
         <div className="bg-white border border-line overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
-              <tr className="bg-cream">
+              <tr className="bg-paper">
                 {['Strategy', 'Q1 2026', '1 Year', '3 Year', '5 Year', 'Since Inception'].map((col, i) => (
                   <th
                     key={col}
-                    className={`px-7 py-4 font-sans text-[0.65rem] font-semibold tracking-[0.14em] uppercase text-muted border-b border-line ${
+                    className={`px-7 py-4 font-sans text-xs font-semibold tracking-[0.14em] uppercase text-muted border-b border-line ${
                       i === 0 ? 'text-left' : 'text-right'
                     }`}
                   >
@@ -75,9 +78,9 @@ export default function Performance() {
               {strategies.map((row) => (
                 <tr
                   key={row.name}
-                  className="border-b border-line last:border-b-0 hover:bg-gold/[0.03] transition-colors duration-150"
+                  className={`border-b border-line last:border-b-0 hover:bg-${primary}-900/[0.03] transition-colors duration-150`}
                 >
-                  <td className="px-7 py-5 font-sans text-[0.88rem] font-medium text-forest-900">
+                  <td className={`px-7 py-5 font-sans text-sm font-medium text-${primary}-900`}>
                     {row.name}
                   </td>
                   {[row.q1, row.oneYear, row.threeYear, row.fiveYear, row.inception].map((val, j) => (
@@ -93,7 +96,7 @@ export default function Performance() {
             </tbody>
           </table>
         </div>
-        <p className="mt-5 font-sans text-[0.72rem] text-muted leading-relaxed">
+        <p className="mt-5 font-sans text-xs text-muted leading-relaxed">
           Performance is net of fees. Past performance is not indicative 
           of future results. Please refer to the Performance Disclosures 
           for more information.
