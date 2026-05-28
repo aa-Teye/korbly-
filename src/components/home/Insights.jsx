@@ -28,7 +28,7 @@ const articles = [
 export default function Insights() {
   return (
     <section className="bg-white">
-      <div className="max-w-7xl mx-auto px-8 py-14">
+      <div className="max-w-8xl mx-auto px-10 py-20">
         
         {/* Header */}
         <div className="flex justify-between items-end mb-14">
@@ -36,7 +36,7 @@ export default function Insights() {
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Research & Commentary
             </span>
-            <h2 className="mt-3 font-serif text-2xl font-medium text-navy-900"
+            <h2 className="mt-3 font-serif text-3xl font-medium text-navy-900"
             >
               Featured Insights
             </h2>
@@ -61,7 +61,7 @@ export default function Insights() {
               <img
                 src={articles[0].image}
                 alt={articles[0].title}
-                className="w-full h-[300px] object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="p-8 flex flex-col flex-1">
@@ -97,10 +97,10 @@ export default function Insights() {
                 <img
                   src={articles[1].image}
                   alt={articles[1].title}
-                  className="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-6 flex flex-col flex-1">
+              <div className="p-8 flex flex-col flex-1">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="font-sans text-[0.65rem] font-semibold tracking-[0.16em] uppercase text-navy-600">
                     {articles[1].category}
@@ -125,14 +125,14 @@ export default function Insights() {
             </article>
 
             {/* Article 3 - dark overlay */}
-            <article className="relative overflow-hidden group flex-1 min-h-[200px]">
+            <article className="relative overflow-hidden group flex-1 min-h-[220px]">
               <img
                 src={articles[2].image}
                 alt={articles[2].title}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-navy-900/80" />
-              <div className="relative p-6 flex flex-col h-full justify-end">
+              <div className="relative p-8 flex flex-col h-full justify-end">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="font-sans text-[0.65rem] font-semibold tracking-[0.16em] uppercase text-navy-700">
                     {articles[2].category}

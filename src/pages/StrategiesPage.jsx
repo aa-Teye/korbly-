@@ -46,16 +46,16 @@ export default function StrategiesPage() {
         <div className="absolute inset-0"
           style={{ background: 'linear-gradient(90deg, rgba(12,30,54,0.75) 0%, rgba(12,30,54,0.40) 60%, rgba(12,30,54,0.20) 100%)' }}
         />
-        <div className="relative max-w-7xl mx-auto px-8 h-full flex items-center">
+        <div className="relative max-w-8xl mx-auto px-10 h-full flex items-center">
           <div className="text-white max-w-2xl">
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Our Strategies
             </span>
-            <h1 className="mt-4 font-serif font-light text-white leading-tight text-4xl md:text-5xl"
+            <h1 className="mt-4 font-serif font-light text-white leading-tight text-5xl md:text-6xl lg:text-7xl"
             >
               Focused strategies,<br />designed to deliver<br />long-term value.
             </h1>
-            <p className="mt-6 font-sans text-base leading-relaxed font-light text-white/85 max-w-lg">
+            <p className="mt-6 font-sans text-lg leading-relaxed font-light text-white/85 max-w-lg">
               We employ a range of investment strategies across public 
               and private markets, each grounded in disciplined research 
               and patient capital.
@@ -66,28 +66,28 @@ export default function StrategiesPage() {
 
       {/* Strategies Grid */}
       <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-8 py-14">
-          <h2 className="font-serif text-2xl font-medium text-navy-900 mb-10">
+        <div className="max-w-8xl mx-auto px-10 py-20">
+          <h2 className="font-serif text-3xl font-medium text-navy-900 mb-10">
             Our Strategies
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {strategies.map((strategy) => (
               <article
                 key={strategy.title}
                 className="bg-white border border-line hover:shadow-lg transition-shadow duration-300 overflow-hidden group flex flex-col"
               >
-                <div className="h-52 overflow-hidden">
+                <div className="h-64 overflow-hidden">
                   <img
                     src={strategy.image}
                     alt={strategy.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-7 flex flex-col flex-grow">
+                <div className="p-8 flex flex-col flex-grow">
                   <h3 className="font-serif text-xl font-light text-navy-900">
                     {strategy.title}
                   </h3>
-                  <p className="mt-3 font-sans text-sm font-light leading-relaxed text-muted flex-grow">
+                  <p className="mt-3 font-sans text-base font-light leading-relaxed text-muted flex-grow">
                     {strategy.desc}
                   </p>
                   <ul className="mt-5 flex flex-col gap-2">
@@ -118,13 +118,13 @@ export default function StrategiesPage() {
 
       {/* Performance Table */}
       <section className="bg-paper border-t border-b border-line">
-        <div className="max-w-7xl mx-auto px-8 py-14">
+        <div className="max-w-8xl mx-auto px-10 py-20">
           <div className="flex justify-between items-end mb-10">
             <div>
               <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
                 Track Record
               </span>
-              <h2 className="mt-3 font-serif text-2xl font-medium text-navy-900">
+              <h2 className="mt-3 font-serif text-3xl font-medium text-navy-900">
                 Strategy Performance
               </h2>
               <p className="font-sans text-xs text-muted mt-1">
@@ -133,7 +133,7 @@ export default function StrategiesPage() {
             </div>
           </div>
           <div className="bg-white border border-line overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
+            <table className="w-full text-base border-collapse">
               <thead>
                 <tr className="bg-paper">
                   {['Strategy', 'Q1 2026', '1 Year', '3 Year', '5 Year', 'Since Inception'].map((col, i) => (
@@ -150,9 +150,9 @@ export default function StrategiesPage() {
                   { name: 'Korbly Private Credit', q1: '2.1%', one: '8.3%', three: '6.5%', five: '6.9%', inc: '7.1%' },
                 ].map((row) => (
                   <tr key={row.name} className="border-b border-line last:border-b-0 hover:bg-navy-600/[0.03] transition-colors duration-150">
-                    <td className="px-7 py-5 font-sans text-sm font-medium text-navy-900">{row.name}</td>
+                    <td className="px-7 py-5 font-sans text-base font-medium text-navy-900">{row.name}</td>
                     {[row.q1, row.one, row.three, row.five, row.inc].map((val, j) => (
-                      <td key={j} className="px-7 py-5 font-serif text-base font-medium text-right text-ink tabular-nums">{val}</td>
+                      <td key={j} className="px-7 py-5 font-serif text-lg font-medium text-right text-ink tabular-nums">{val}</td>
                     ))}
                   </tr>
                 ))}
@@ -167,8 +167,8 @@ export default function StrategiesPage() {
 
       {/* CTA */}
       <section className="bg-navy-800">
-        <div className="max-w-7xl mx-auto px-8 py-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <p className="font-serif font-light text-white text-2xl leading-snug">
+        <div className="max-w-8xl mx-auto px-10 py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <p className="font-serif font-light text-white text-3xl leading-snug">
             Looking for a partner with a long-term perspective?
           </p>
           <Link

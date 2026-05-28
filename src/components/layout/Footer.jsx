@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-ink text-white/65">
       
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-8 py-14 grid grid-cols-2 md:grid-cols-5 gap-10">
+      <div className="max-w-8xl mx-auto px-10 py-20 grid grid-cols-2 md:grid-cols-5 gap-12">
         
         {/* Brand Column */}
         <div className="col-span-2 md:col-span-1">
@@ -33,7 +33,7 @@ export default function Footer() {
               <li key={item}>
                 <Link
                   to="/about"
-                  className="font-sans text-xs font-light text-white/55 hover:text-white transition-colors duration-150 no-underline"
+                  className="font-sans text-sm font-light text-white/55 hover:text-white transition-colors duration-150 no-underline"
                 >
                   {item}
                 </Link>
@@ -57,7 +57,7 @@ export default function Footer() {
               <li key={item.label}>
                 <Link
                   to={item.path}
-                  className="font-sans text-xs font-light text-white/55 hover:text-white transition-colors duration-150 no-underline"
+                  className="font-sans text-sm font-light text-white/55 hover:text-white transition-colors duration-150 no-underline"
                 >
                   {item.label}
                 </Link>
@@ -81,7 +81,7 @@ export default function Footer() {
               <li key={item.label}>
                 <Link
                   to={item.path}
-                  className="font-sans text-xs font-light text-white/55 hover:text-white transition-colors duration-150 no-underline"
+                  className="font-sans text-sm font-light text-white/55 hover:text-white transition-colors duration-150 no-underline"
                 >
                   {item.label}
                 </Link>
@@ -95,7 +95,7 @@ export default function Footer() {
           <div className="font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-navy-600 mb-5">
             Connect
           </div>
-          <ul className="flex flex-col gap-3 text-xs font-light">
+          <ul className="flex flex-col gap-3 text-sm font-light">
             <li>
               <a
                 href="mailto:info@korblygroup.com"
@@ -113,7 +113,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-8 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+        <div className="max-w-8xl mx-auto px-10 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
           <div className="font-sans text-xs text-white/30">
             © 2026 Korbly Investment Partners. All rights reserved.
           </div>

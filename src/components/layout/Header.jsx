@@ -28,7 +28,7 @@ export default function Header() {
         scrolled ? 'shadow-lg' : ''
       }`}
     >
-      <div className="max-w-7xl mx-auto px-8 h-[72px] flex items-center justify-between">
+      <div className="max-w-8xl mx-auto px-10 h-[72px] flex items-center justify-between">
         
         {/* Logo */}
         <Link to="/" className="flex flex-col gap-[2px] no-underline">

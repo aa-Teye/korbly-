@@ -43,7 +43,7 @@ export default function Pillars() {
     <section className="bg-paper border-t border-b border-line">
       <div
         ref={ref}
-        className="max-w-7xl mx-auto px-8 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+        className="max-w-8xl mx-auto px-10 py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
       >
         {pillars.map((pillar, i) => (
           <div
@@ -59,10 +59,10 @@ export default function Pillars() {
               {icons[i]}
             </div>
             <div>
-              <h3 className="font-sans text-sm font-semibold text-navy-900 tracking-wide">
+              <h3 className="font-sans text-lg font-semibold text-navy-900 tracking-wide">
                 {pillar.title}
               </h3>
-              <p className="mt-2 font-sans text-xs font-light leading-relaxed text-muted">
+              <p className="mt-2 font-sans text-sm font-light leading-relaxed text-muted">
                 {pillar.text}
               </p>
             </div>

@@ -78,16 +78,16 @@ export default function InsightsPage() {
         <div className="absolute inset-0"
           style={{ background: 'linear-gradient(90deg, rgba(12,30,54,0.75) 0%, rgba(12,30,54,0.40) 60%, rgba(12,30,54,0.20) 100%)' }}
         />
-        <div className="relative max-w-7xl mx-auto px-8 h-full flex items-center">
+        <div className="relative max-w-8xl mx-auto px-10 h-full flex items-center">
           <div className="text-white max-w-2xl">
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Research & Commentary
             </span>
-            <h1 className="mt-4 font-serif font-light text-white leading-tight text-4xl md:text-5xl"
+            <h1 className="mt-4 font-serif font-light text-white leading-tight text-5xl md:text-6xl lg:text-7xl"
             >
               Sovereign analysis.<br />Market intelligence.<br />Systemic research.
             </h1>
-            <p className="mt-6 font-sans text-base leading-relaxed font-light text-white/85 max-w-lg">
+            <p className="mt-6 font-sans text-lg leading-relaxed font-light text-white/85 max-w-lg">
               Independent, data-driven macro commentary and structured perspectives 
               designed for institutional allocators, governments, and enterprise partners.
             </p>
@@ -97,7 +97,7 @@ export default function InsightsPage() {
 
       {/* Featured Insight Section */}
       <section className="bg-white border-b border-line">
-        <div className="max-w-7xl mx-auto px-8 py-14">
+        <div className="max-w-8xl mx-auto px-10 py-20">
           <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600 mb-8 block">
             Featured Analysis
           </span>
@@ -119,10 +119,10 @@ export default function InsightsPage() {
                 <span>•</span>
                 <span>{featuredArticle.readTime}</span>
               </div>
-              <h2 className="font-serif text-2xl font-medium text-navy-900 leading-snug mb-5">
+              <h2 className="font-serif text-3xl font-medium text-navy-900 leading-snug mb-5">
                 {featuredArticle.title}
               </h2>
-              <p className="font-sans text-sm font-light leading-relaxed text-muted mb-6">
+              <p className="font-sans text-base font-light leading-relaxed text-muted mb-6">
                 {featuredArticle.desc}
               </p>
               <div className="flex items-center justify-between border-t border-line pt-6">
@@ -147,19 +147,19 @@ export default function InsightsPage() {
 
       {/* Research Archive Library */}
       <section className="bg-paper">
-        <div className="max-w-7xl mx-auto px-8 py-14">
-          <h2 className="font-serif text-2xl font-medium text-navy-900 mb-12 border-b border-line pb-4">
+        <div className="max-w-8xl mx-auto px-10 py-20">
+          <h2 className="font-serif text-3xl font-medium text-navy-900 mb-12 border-b border-line pb-4">
             Research Archive
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {articlesArchive.map((article) => (
               <article
                 key={article.title}
                 className="bg-white border border-line hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col group"
               >
                 {/* Card Image */}
-                <div className="h-52 overflow-hidden relative">
+                <div className="h-64 overflow-hidden relative">
                   <img
                     src={article.image}
                     alt={article.title}
@@ -171,16 +171,16 @@ export default function InsightsPage() {
                 </div>
 
                 {/* Card Content */}
-                <div className="p-7 flex flex-col flex-1">
+                <div className="p-8 flex flex-col flex-1">
                   <div className="flex items-center gap-3 text-xs text-muted font-sans font-light mb-3">
                     <span>{article.date}</span>
                     <span>•</span>
                     <span>{article.readTime}</span>
                   </div>
-                  <h3 className="font-serif text-lg font-light text-navy-900 leading-snug flex-1 group-hover:text-navy-600 transition-colors duration-200">
+                  <h3 className="font-serif text-xl font-light text-navy-900 leading-snug flex-1 group-hover:text-navy-600 transition-colors duration-200">
                     {article.title}
                   </h3>
-                  <p className="mt-3 font-sans text-xs font-light leading-relaxed text-muted mb-5">
+                  <p className="mt-3 font-sans text-sm font-light leading-relaxed text-muted mb-5">
                     {article.desc}
                   </p>
                   <div className="border-t border-line/60 pt-4 mt-auto">
@@ -216,14 +216,14 @@ export default function InsightsPage() {
           </svg>
         </div>
 
-        <div className="relative max-w-4xl mx-auto px-8 py-14 text-center">
+        <div className="relative max-w-4xl mx-auto px-10 py-20 text-center">
           <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-white/70">
             Intelligence Briefing
           </span>
           <h2 className="mt-4 font-serif font-light text-white text-3xl mb-4">
             Subscribe to Korbly Intelligence
           </h2>
-          <p className="font-sans text-sm font-light leading-relaxed text-white/70 max-w-lg mx-auto mb-10">
+          <p className="font-sans text-base font-light leading-relaxed text-white/70 max-w-lg mx-auto mb-10">
             Receive our proprietary sovereign risk analytics, transaction pricing insights, 
             and macroeconomic commentaries delivered weekly to your inbox.
           </p>

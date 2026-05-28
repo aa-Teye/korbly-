@@ -58,16 +58,16 @@ export default function InvestorPortalPage() {
         <div className="absolute inset-0"
           style={{ background: 'linear-gradient(90deg, rgba(12,30,54,0.75) 0%, rgba(12,30,54,0.40) 60%, rgba(12,30,54,0.20) 100%)' }}
         />
-        <div className="relative max-w-7xl mx-auto px-8 h-full flex items-center">
+        <div className="relative max-w-8xl mx-auto px-10 h-full flex items-center">
           <div className="text-white max-w-2xl">
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Security Protocol
             </span>
-            <h1 className="mt-4 font-serif font-light text-white leading-tight text-4xl md:text-5xl"
+            <h1 className="mt-4 font-serif font-light text-white leading-tight text-5xl md:text-6xl lg:text-7xl"
             >
               {isAuthenticated ? 'Client Account Portal' : 'Investor Portal'}
             </h1>
-            <p className="mt-6 font-sans text-base leading-relaxed font-light text-white/85 max-w-lg">
+            <p className="mt-6 font-sans text-lg leading-relaxed font-light text-white/85 max-w-lg">
               {isAuthenticated 
                 ? 'Secured dashboard for sovereign, pension trustees, and institutional allocation committees.'
                 : 'Access Korbly SPV performance records, audited quarterly financials, capital calls, and regulatory governance vaults.'
@@ -78,8 +78,8 @@ export default function InvestorPortalPage() {
       </section>
 
       {/* Main Body */}
-      <section className="bg-white min-h-[600px] py-14">
-        <div className="max-w-7xl mx-auto px-8">
+      <section className="bg-white min-h-[600px] py-20">
+        <div className="max-w-8xl mx-auto px-10">
 
           {!isAuthenticated ? (
             /* Secure Client Login Gate */
@@ -90,10 +90,10 @@ export default function InvestorPortalPage() {
                   Secure Sign-In
                 </span>
               </div>
-              <h2 className="font-serif font-light text-navy-900 text-2xl mb-4">
+              <h2 className="font-serif font-light text-navy-900 text-3xl mb-4">
                 Authenticate Credentials
               </h2>
-              <p className="font-sans text-xs text-muted leading-relaxed mb-8">
+              <p className="font-sans text-sm text-muted leading-relaxed mb-8">
                 Authorized access only. All activity is cryptographically logged and monitored. 
                 Enter your institutional Client ID, corporate email address, and security passkey.
               </p>
@@ -108,7 +108,7 @@ export default function InvestorPortalPage() {
                     required
                     value={loginData.clientId}
                     onChange={(e) => setLoginData({ ...loginData, clientId: e.target.value })}
-                    className="w-full font-sans text-sm px-4 py-3 bg-white border border-line focus:border-navy-600 focus:outline-none transition-colors"
+                    className="w-full font-sans text-base px-4 py-3.5 bg-white border border-line focus:border-navy-600 focus:outline-none transition-colors"
                     placeholder="e.g. KB-GH-XXX"
                   />
                 </div>
@@ -122,7 +122,7 @@ export default function InvestorPortalPage() {
                     required
                     value={loginData.email}
                     onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
-                    className="w-full font-sans text-sm px-4 py-3 bg-white border border-line focus:border-navy-600 focus:outline-none transition-colors"
+                    className="w-full font-sans text-base px-4 py-3.5 bg-white border border-line focus:border-navy-600 focus:outline-none transition-colors"
                     placeholder="allocator@firm.com"
                   />
                 </div>
@@ -136,7 +136,7 @@ export default function InvestorPortalPage() {
                     required
                     value={loginData.passkey}
                     onChange={(e) => setLoginData({ ...loginData, passkey: e.target.value })}
-                    className="w-full font-sans text-sm px-4 py-3 bg-white border border-line focus:border-navy-600 focus:outline-none transition-colors"
+                    className="w-full font-sans text-base px-4 py-3.5 bg-white border border-line focus:border-navy-600 focus:outline-none transition-colors"
                     placeholder="••••••••••••"
                   />
                 </div>
@@ -188,12 +188,12 @@ export default function InvestorPortalPage() {
             <div className="flex flex-col gap-10 animate-fadeIn">
               
               {/* Entity Banner */}
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-paper border border-line p-7 gap-5">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-paper border border-line p-8 gap-5">
                 <div>
                   <span className="font-sans text-[0.62rem] font-bold tracking-[0.16em] uppercase text-navy-700">
                     Corporate Allocator Profile
                   </span>
-                  <h3 className="font-serif text-2xl font-light text-navy-900 mt-1">
+                  <h3 className="font-serif text-3xl font-light text-navy-900 mt-1">
                     Social Security and National Insurance Trust (SSNIT)
                   </h3>
                   <div className="flex gap-4 mt-2 font-sans text-xs text-muted">
@@ -221,11 +221,11 @@ export default function InvestorPortalPage() {
                   { label: 'Total Distributed (DPI)', value: '$4,750,000' },
                   { label: 'Current Net Asset Value (NAV)', value: '$21,450,000' },
                 ].map((metric, i) => (
-                  <div key={i} className="bg-white p-6">
+                  <div key={i} className="bg-white p-8">
                     <span className="block font-sans text-xs text-muted leading-tight">
                       {metric.label}
                     </span>
-                    <span className="block font-serif text-2xl font-medium text-navy-900 mt-3 tabular-nums">
+                    <span className="block font-serif text-3xl font-medium text-navy-900 mt-3 tabular-nums">
                       {metric.value}
                     </span>
                   </div>
@@ -234,15 +234,15 @@ export default function InvestorPortalPage() {
 
               {/* Mandates and SPVs List */}
               <div>
-                <h3 className="font-serif text-xl font-light text-navy-900 mb-6">
+                <h3 className="font-serif text-2xl font-light text-navy-900 mb-6">
                   Active Asset Mandates
                 </h3>
                 <div className="bg-white border border-line overflow-x-auto">
-                  <table className="w-full text-sm border-collapse">
+                  <table className="w-full text-base border-collapse">
                     <thead>
                       <tr className="bg-paper">
                         {['Mandate Portfolio', 'Committed Capital', 'Called Capital', 'Net Asset Value', 'Mandate Net IRR', 'Status'].map((col, i) => (
-                          <th key={col} className={`px-6 py-4 font-sans text-xs font-semibold tracking-[0.12em] uppercase text-muted border-b border-line ${i === 0 ? 'text-left' : 'text-right'}`}>
+                          <th key={col} className={`px-7 py-4 font-sans text-xs font-semibold tracking-[0.12em] uppercase text-muted border-b border-line ${i === 0 ? 'text-left' : 'text-right'}`}>
                             {col}
                           </th>
                         ))}
@@ -251,12 +251,12 @@ export default function InvestorPortalPage() {
                     <tbody>
                       {initialMandates.map((row) => (
                         <tr key={row.id} className="border-b border-line last:border-b-0 hover:bg-navy-600/[0.02]">
-                          <td className="px-6 py-5 font-sans text-sm font-semibold text-navy-900">{row.name}</td>
-                          <td className="px-6 py-5 font-serif text-base text-right text-ink tabular-nums">{row.commitment}</td>
-                          <td className="px-6 py-5 font-serif text-base text-right text-ink tabular-nums">{row.called}</td>
-                          <td className="px-6 py-5 font-serif text-base text-right text-ink tabular-nums">{row.nav}</td>
-                          <td className="px-6 py-5 font-serif text-base text-right text-navy-700 font-semibold tabular-nums">{row.irr}</td>
-                          <td className="px-6 py-5 text-right">
+                          <td className="px-7 py-5 font-sans text-base font-semibold text-navy-900">{row.name}</td>
+                          <td className="px-7 py-5 font-serif text-lg text-right text-ink tabular-nums">{row.commitment}</td>
+                          <td className="px-7 py-5 font-serif text-lg text-right text-ink tabular-nums">{row.called}</td>
+                          <td className="px-7 py-5 font-serif text-lg text-right text-ink tabular-nums">{row.nav}</td>
+                          <td className="px-7 py-5 font-serif text-lg text-right text-navy-700 font-semibold tabular-nums">{row.irr}</td>
+                          <td className="px-7 py-5 text-right">
                             <span className="inline-block font-sans text-[0.62rem] font-semibold tracking-wider uppercase px-3 py-1 bg-green-50 text-[#1B7F52] border border-[#1B7F52]/20">
                               {row.status}
                             </span>
@@ -273,7 +273,7 @@ export default function InvestorPortalPage() {
                 
                 {/* Vault Documents (Left Column) */}
                 <div className="lg:col-span-7">
-                  <h3 className="font-serif text-xl font-light text-navy-900 mb-6 flex items-center gap-3">
+                  <h3 className="font-serif text-2xl font-light text-navy-900 mb-6 flex items-center gap-3">
                     Secure Document Vault
                     <span className="font-sans text-xs px-2 py-0.5 bg-navy-600/15 text-navy-700 font-semibold rounded animate-pulse">
                       Audited Filings
@@ -281,9 +281,9 @@ export default function InvestorPortalPage() {
                   </h3>
                   <div className="flex flex-col border border-line divide-y divide-line">
                     {vaultDocs.map((doc) => (
-                      <div key={doc.id} className="p-5 flex justify-between items-center bg-white hover:bg-paper/20 transition-colors">
+                      <div key={doc.id} className="p-6 flex justify-between items-center bg-white hover:bg-paper/20 transition-colors">
                         <div>
-                          <h4 className="font-sans text-sm font-semibold text-navy-900 leading-none">
+                          <h4 className="font-sans text-base font-semibold text-navy-900 leading-none">
                             {doc.name}
                           </h4>
                           <span className="block mt-2 font-sans text-xs text-muted">
@@ -305,17 +305,17 @@ export default function InvestorPortalPage() {
                 </div>
 
                 {/* Direct Channel Wire (Right Column) */}
-                <div className="lg:col-span-5 bg-paper border border-line p-8 h-fit">
+                <div className="lg:col-span-5 bg-paper border border-line p-10 h-fit">
                   <div className="flex items-center gap-3 mb-5">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#1B7F52]" />
                     <span className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-navy-700">
                       Advisory Channel Open
                     </span>
                   </div>
-                  <h3 className="font-serif font-light text-navy-900 text-xl mb-3">
+                  <h3 className="font-serif font-light text-navy-900 text-2xl mb-3">
                     Secure Advisory Routing
                   </h3>
-                  <p className="font-sans text-xs text-muted leading-relaxed mb-6">
+                  <p className="font-sans text-sm text-muted leading-relaxed mb-6">
                     Route advisory queries, redemption notices, or board representative updates directly to the Managing CIO's quantitative desk.
                   </p>
 

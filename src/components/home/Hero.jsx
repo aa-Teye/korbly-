@@ -36,7 +36,6 @@ export default function Hero() {
       {/* Background Images Slideshow with Crossfade */}
       {slides.map((slide, idx) => (
         <div
-          key={slide.image}
           className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
             idx === currentSlide ? 'opacity-80' : 'opacity-0'
           } mix-blend-overlay`}
@@ -76,7 +75,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-8 w-full py-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center z-[2]">
+      <div className="relative max-w-8xl mx-auto px-10 w-full py-20 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center z-[2]">
         
         {/* Left - Main Content */}
         <div className="lg:col-span-7">
@@ -90,14 +89,14 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-serif font-light text-white leading-tight tracking-tight text-5xl md:text-6xl"
+          <h1 className="font-serif font-light text-white leading-tight tracking-tight text-5xl md:text-6xl lg:text-7xl"
           >
             Long-Term Thinking.<br />
             <span className="text-navy-600">Meaningful Outcomes.</span>
           </h1>
 
           {/* Lead text */}
-          <p className="mt-8 max-w-xl font-sans text-base leading-relaxed font-light text-white/75">
+          <p className="mt-8 max-w-xl font-sans text-lg leading-relaxed font-light text-white/75">
             Korbly Investment Partners is a private investment firm 
             focused on generating enduring value through discipline, 
             experience, and alignment. Based in Accra, Ghana.
@@ -129,7 +128,7 @@ export default function Hero() {
         {/* Right - Philosophy Card */}
         <div className="lg:col-span-4 lg:col-start-9">
           <div
-            className="p-9 border border-white/10 backdrop-blur bg-navy-900/95 relative overflow-hidden"
+            className="p-10 border border-white/10 backdrop-blur bg-navy-900/95 relative overflow-hidden"
           >
             {/* Card eyebrow */}
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-white/70">
@@ -137,7 +136,7 @@ export default function Hero() {
             </span>
 
             {/* Card title */}
-            <h2 className="mt-5 font-serif text-2xl font-medium text-white leading-snug">
+            <h2 className="mt-5 font-serif text-3xl font-medium text-white leading-snug">
               We partner with exceptional management teams to build great businesses.
             </h2>
 

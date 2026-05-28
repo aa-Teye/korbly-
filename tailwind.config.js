@@ -22,6 +22,9 @@ export default {
         sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
         serif: ['"IBM Plex Serif"', 'Georgia', 'serif'],
       },
+      maxWidth: {
+        '8xl': '1440px',
+      },
     },
   },
   plugins: [],

@@ -49,16 +49,16 @@ export default function AboutPage() {
         <div className="absolute inset-0"
           style={{ background: 'linear-gradient(90deg, rgba(12,30,54,0.75) 0%, rgba(12,30,54,0.40) 60%, rgba(12,30,54,0.20) 100%)' }}
         />
-        <div className="relative max-w-7xl mx-auto px-8 h-full flex items-center">
+        <div className="relative max-w-8xl mx-auto px-10 h-full flex items-center">
           <div className="text-white max-w-2xl">
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Our Firm
             </span>
-            <h1 className="mt-4 font-serif font-light text-white leading-tight text-4xl md:text-5xl"
+            <h1 className="mt-4 font-serif font-light text-white leading-tight text-5xl md:text-6xl lg:text-7xl"
             >
               Systematic merchant banking.<br />Anchored in Africa.
             </h1>
-            <p className="mt-6 font-sans text-base leading-relaxed font-light text-white/85 max-w-lg">
+            <p className="mt-6 font-sans text-lg leading-relaxed font-light text-white/85 max-w-lg">
               Combining macro intelligence, quantitative transaction structuring, and sovereign advisory 
               into a single integrated operating system. Based in Accra, Ghana.
             </p>
@@ -68,23 +68,23 @@ export default function AboutPage() {
 
       {/* Mission Vision Split Section */}
       <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-8 py-14 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="max-w-8xl mx-auto px-10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           
           {/* Left Text */}
           <div>
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               The Vision
             </span>
-            <h2 className="mt-4 font-serif text-2xl font-medium text-navy-900 leading-snug mb-6">
+            <h2 className="mt-4 font-serif text-3xl font-medium text-navy-900 leading-snug mb-6">
               Built for Africa’s Future.
             </h2>
-            <p className="font-sans text-sm font-light leading-relaxed text-muted mb-4">
+            <p className="font-sans text-base font-light leading-relaxed text-muted mb-4">
               Africa has no shortage of available capital pools—with domestic institutional assets exceeding $775 billion 
               and foreign development allocations over $550 billion. The true bottleneck is structural: the lack of a 
               domestically-owned, compliance-grade merchant banking institution capable of bridging the gap between raw capital 
               and highly de-risked, exit-ready assets.
             </p>
-            <p className="font-sans text-sm font-light leading-relaxed text-muted mb-6">
+            <p className="font-sans text-base font-light leading-relaxed text-muted mb-6">
               Korbly was founded in 2026 to resolve this structural gridlock. Operating as a systematic merchant bank, 
               we combine deep economic causal modeling with quantitative private credit, thematic private equity, and sovereign advisory 
               to engineer long-term compounding mechanisms for our partners.
@@ -126,17 +126,17 @@ export default function AboutPage() {
 
       {/* Core Values Section */}
       <section className="bg-paper border-t border-b border-line">
-        <div className="max-w-7xl mx-auto px-8 py-14">
+        <div className="max-w-8xl mx-auto px-10 py-20">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Operating Principles
             </span>
-            <h2 className="mt-3 font-serif text-2xl font-medium text-navy-900">
+            <h2 className="mt-3 font-serif text-3xl font-medium text-navy-900">
               Our Core Values
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {values.map((value) => (
               <div
                 key={value.title}
@@ -145,7 +145,7 @@ export default function AboutPage() {
                 <h3 className="font-serif text-xl font-light text-navy-900 mb-4 border-b border-line/60 pb-3">
                   {value.title}
                 </h3>
-                <p className="font-sans text-xs font-light leading-relaxed text-muted flex-1">
+                <p className="font-sans text-sm font-light leading-relaxed text-muted flex-1">
                   {value.desc}
                 </p>
               </div>
@@ -156,28 +156,28 @@ export default function AboutPage() {
 
       {/* Leadership Section */}
       <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-8 py-14">
+        <div className="max-w-8xl mx-auto px-10 py-20">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Executive Committee
             </span>
-            <h2 className="mt-3 font-serif text-2xl font-medium text-navy-900">
+            <h2 className="mt-3 font-serif text-3xl font-medium text-navy-900">
               Leadership & Partners
             </h2>
-            <p className="font-sans text-xs text-muted font-light leading-relaxed mt-2">
+            <p className="font-sans text-sm text-muted font-light leading-relaxed mt-2">
               Our senior partners combine international investment banking backgrounds with elite academic credentials 
               to provide systematic execution capabilities.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {leadership.map((member) => (
               <div
                 key={member.name}
                 className="border border-line/60 hover:shadow-md transition-shadow duration-300 bg-paper/[0.1] group flex flex-col"
               >
                 {/* Profile Image */}
-                <div className="h-72 overflow-hidden relative border-b border-line/40">
+                <div className="h-96 overflow-hidden relative border-b border-line/40">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -186,15 +186,15 @@ export default function AboutPage() {
                 </div>
 
                 {/* Profile Content */}
-                <div className="p-7 flex-1 flex flex-col justify-between">
+                <div className="p-8 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-serif text-lg font-light text-navy-900">
+                    <h3 className="font-serif text-xl font-light text-navy-900">
                       {member.name}
                     </h3>
                     <span className="font-sans text-[0.65rem] font-semibold tracking-[0.1em] uppercase text-navy-600 block mt-1">
                       {member.role}
                     </span>
-                    <p className="mt-4 font-sans text-xs font-light leading-relaxed text-muted">
+                    <p className="mt-4 font-sans text-sm font-light leading-relaxed text-muted">
                       {member.bio}
                     </p>
                   </div>
@@ -215,8 +215,8 @@ export default function AboutPage() {
 
       {/* CTA Strip */}
       <section className="bg-navy-800">
-        <div className="max-w-7xl mx-auto px-8 py-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <p className="font-serif font-light text-white text-2xl leading-snug">
+        <div className="max-w-8xl mx-auto px-10 py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <p className="font-serif font-light text-white text-3xl leading-snug">
             Looking to align with a disciplined capital partner?
           </p>
           <Link

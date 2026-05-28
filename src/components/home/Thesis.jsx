@@ -16,7 +16,7 @@ export default function Thesis() {
 
   return (
     <section className="bg-white" ref={ref}>
-      <div className="max-w-7xl mx-auto px-8 py-14 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+      <div className="max-w-8xl mx-auto px-10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
         
         {/* Left - Text */}
         <div className={`transition-all duration-700 ${
@@ -25,7 +25,7 @@ export default function Thesis() {
           <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
             Our Thesis
           </span>
-          <h2 className="mt-5 font-serif text-2xl font-medium leading-tight text-navy-900"
+          <h2 className="mt-5 font-serif text-3xl font-medium leading-tight text-navy-900"
           >
             The missing element is not capital — it is a{' '}
             <span className="text-navy-700">
@@ -33,14 +33,14 @@ export default function Thesis() {
             </span>{' '}
             with the depth to deploy it.
           </h2>
-          <p className="mt-7 font-sans text-sm leading-relaxed text-ink/70">
+          <p className="mt-7 font-sans text-base leading-relaxed text-ink/70">
             Africa possesses approximately $775 billion in institutional 
             investor assets, access to at least $550 billion in available 
             international infrastructure capital, and a combined GDP 
             exceeding $2.97 trillion. Yet 80% of African infrastructure 
             projects fail before reaching financial close.
           </p>
-          <p className="mt-5 font-sans text-sm leading-relaxed text-ink/70">
+          <p className="mt-5 font-sans text-base leading-relaxed text-ink/70">
             Korbly is designed as a systematic merchant bank — the first 
             African institution combining macro intelligence, quantitative 
             structuring, sovereign advisory, private equity, and capital 

@@ -14,14 +14,14 @@ export default function CTAStrip() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-8 py-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div className="relative max-w-8xl mx-auto px-10 py-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
         
         <div>
-          <h2 className="font-serif font-light text-white leading-tight text-2xl font-medium"
+          <h2 className="font-serif text-3xl font-medium text-white leading-tight"
           >
             Let's build something enduring—together.
           </h2>
-          <p className="mt-3 font-sans text-sm font-light text-white/65">
+          <p className="mt-3 font-sans text-base font-light text-white/65">
             We welcome the opportunity to connect with institutional 
             investors, sovereigns, and management teams.
           </p>

@@ -56,16 +56,16 @@ export default function ResourcesPage() {
         <div className="absolute inset-0"
           style={{ background: 'linear-gradient(90deg, rgba(12,30,54,0.75) 0%, rgba(12,30,54,0.40) 60%, rgba(12,30,54,0.20) 100%)' }}
         />
-        <div className="relative max-w-7xl mx-auto px-8 h-full flex items-center">
+        <div className="relative max-w-8xl mx-auto px-10 h-full flex items-center">
           <div className="text-white max-w-2xl">
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Library & Governance
             </span>
-            <h1 className="mt-4 font-serif font-light text-white leading-tight text-4xl md:text-5xl"
+            <h1 className="mt-4 font-serif font-light text-white leading-tight text-5xl md:text-6xl lg:text-7xl"
             >
               Institutional library.<br />Governance protocols.<br />Investor disclosures.
             </h1>
-            <p className="mt-6 font-sans text-base leading-relaxed font-light text-white/85 max-w-lg">
+            <p className="mt-6 font-sans text-lg leading-relaxed font-light text-white/85 max-w-lg">
               Access statutory filings, sovereign SPV frameworks, and quantitative modeling tools 
               designed for institutional allocators, governments, and enterprise partners.
             </p>
@@ -75,7 +75,7 @@ export default function ResourcesPage() {
 
       {/* Document library grid */}
       <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-8 py-14">
+        <div className="max-w-8xl mx-auto px-10 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             
             {resourceCategories.map((category) => (
@@ -83,10 +83,10 @@ export default function ResourcesPage() {
                 
                 {/* Category Header */}
                 <div className="border-b border-line pb-6 mb-8">
-                  <h2 className="font-serif text-2xl font-medium text-navy-900 mb-3">
+                  <h2 className="font-serif text-3xl font-medium text-navy-900 mb-3">
                     {category.title}
                   </h2>
-                  <p className="font-sans text-xs text-muted font-light leading-relaxed">
+                  <p className="font-sans text-sm text-muted font-light leading-relaxed">
                     {category.desc}
                   </p>
                 </div>
@@ -96,7 +96,7 @@ export default function ResourcesPage() {
                   {category.items.map((item) => (
                     <div
                       key={item.name}
-                      className="border border-line/60 bg-paper p-5 hover:bg-navy-600/[0.03] transition-colors duration-200 group flex items-start gap-4"
+                      className="border border-line/60 bg-paper p-6 hover:bg-navy-600/[0.03] transition-colors duration-200 group flex items-start gap-4"
                     >
                       {/* Document icon */}
                       <div className="text-navy-700 shrink-0 mt-0.5">
@@ -111,7 +111,7 @@ export default function ResourcesPage() {
 
                       {/* Info and action */}
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-sans font-semibold text-xs text-navy-900 leading-snug group-hover:text-navy-600 transition-colors duration-200 truncate">
+                        <h3 className="font-sans font-semibold text-sm text-navy-900 leading-snug group-hover:text-navy-600 transition-colors duration-200 truncate">
                           {item.name}
                         </h3>
                         <div className="flex items-center gap-3 mt-2 text-xs text-muted font-sans font-light">
@@ -148,15 +148,15 @@ export default function ResourcesPage() {
 
       {/* Performance disclosures panel */}
       <section className="bg-paper border-t border-b border-line">
-        <div className="max-w-4xl mx-auto px-8 py-14">
+        <div className="max-w-4xl mx-auto px-10 py-20">
           <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
             Regulatory Guidance
           </span>
-          <h2 className="mt-4 font-serif text-2xl font-medium text-navy-900 mb-8">
+          <h2 className="mt-4 font-serif text-3xl font-medium text-navy-900 mb-8">
             Performance Disclosures & Notes
           </h2>
           
-          <div className="space-y-6 font-sans text-xs font-light leading-relaxed text-muted">
+          <div className="space-y-6 font-sans text-sm font-light leading-relaxed text-muted">
             <p>
               <strong>1. Performance Calculations:</strong> Portfolio returns presented throughout Korbly Investment 
               Partners’ platforms are calculated net of management fees, transaction expenses, and incentive allocations, 
@@ -184,7 +184,7 @@ export default function ResourcesPage() {
 
       {/* Private templates gate form */}
       <section className="bg-navy-800 relative overflow-hidden">
-        <div className="relative max-w-4xl mx-auto px-8 py-14">
+        <div className="relative max-w-8xl mx-auto px-10 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             {/* Left text */}
@@ -195,16 +195,16 @@ export default function ResourcesPage() {
               <h2 className="mt-4 font-serif font-light text-white text-3xl leading-snug mb-4">
                 Request Proprietary Templates
               </h2>
-              <p className="font-sans text-sm font-light leading-relaxed text-white/70">
+              <p className="font-sans text-base font-light leading-relaxed text-white/70">
                 Are you looking to structure custom corporate SPVs or license our systemic sovereign risk dashboards? 
                 Provide your details to connect with a senior structuring banker in Accra.
               </p>
             </div>
 
             {/* Right form */}
-            <div className="bg-white/5 border border-white/10 p-8">
+            <div className="bg-white/5 border border-white/10 p-10">
               {requestSent ? (
-                <div className="text-center py-6 font-sans text-sm text-white">
+                <div className="text-center py-6 font-sans text-base text-white">
                   <h3 className="font-serif text-xl font-light text-white mb-2">Request Submitted</h3>
                   A senior banking officer from our Accra office will contact you within 24 business hours.
                 </div>

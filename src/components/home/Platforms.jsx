@@ -54,7 +54,7 @@ export default function Platforms() {
 
   return (
     <section className="bg-navy-900" ref={ref}>
-      <div className="max-w-7xl mx-auto px-8 py-14">
+      <div className="max-w-8xl mx-auto px-10 py-20">
         
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end mb-16">
@@ -64,12 +64,12 @@ export default function Platforms() {
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Integrated Architecture
             </span>
-            <h2 className="mt-4 font-serif text-2xl font-medium text-white leading-tight"
+            <h2 className="mt-4 font-serif text-3xl font-medium text-white leading-tight"
             >
               Four Platforms.<br />One Operating System.
             </h2>
           </div>
-          <p className={`font-sans text-sm font-light leading-relaxed text-white/65 transition-all duration-700 delay-100 ${
+          <p className={`font-sans text-base font-light leading-relaxed text-white/65 transition-all duration-700 delay-100 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             No existing African-owned institution combines systematic 
@@ -103,7 +103,7 @@ export default function Platforms() {
               </h3>
 
               {/* Description */}
-              <p className="font-sans text-xs font-light leading-relaxed text-white/60">
+              <p className="font-sans text-sm font-light leading-relaxed text-white/60">
                 {platform.desc}
               </p>
 
