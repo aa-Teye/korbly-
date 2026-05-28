@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Performance from '../components/home/Performance'
 
 const strategies = [
   {
@@ -116,54 +117,8 @@ export default function StrategiesPage() {
         </div>
       </section>
 
-      {/* Performance Table */}
-      <section className="bg-paper border-t border-b border-line">
-        <div className="max-w-8xl mx-auto px-10 py-20">
-          <div className="flex justify-between items-end mb-10">
-            <div>
-              <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
-                Track Record
-              </span>
-              <h2 className="mt-3 font-serif text-3xl font-medium text-navy-900">
-                Strategy Performance
-              </h2>
-              <p className="font-sans text-xs text-muted mt-1">
-                As of March 31, 2026
-              </p>
-            </div>
-          </div>
-          <div className="bg-white border border-line overflow-x-auto">
-            <table className="w-full text-base border-collapse">
-              <thead>
-                <tr className="bg-paper">
-                  {['Strategy', 'Q1 2026', '1 Year', '3 Year', '5 Year', 'Since Inception'].map((col, i) => (
-                    <th key={col} className={`px-7 py-4 font-sans text-xs font-semibold tracking-[0.14em] uppercase text-muted border-b border-line ${i === 0 ? 'text-left' : 'text-right'}`}>
-                      {col}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { name: 'Korbly Global Equity', q1: '4.2%', one: '12.8%', three: '8.7%', five: '10.3%', inc: '9.6%' },
-                  { name: 'Korbly Income Opportunities', q1: '1.6%', one: '6.1%', three: '4.3%', five: '5.2%', inc: '5.0%' },
-                  { name: 'Korbly Private Credit', q1: '2.1%', one: '8.3%', three: '6.5%', five: '6.9%', inc: '7.1%' },
-                ].map((row) => (
-                  <tr key={row.name} className="border-b border-line last:border-b-0 hover:bg-navy-600/[0.03] transition-colors duration-150">
-                    <td className="px-7 py-5 font-sans text-base font-medium text-navy-900">{row.name}</td>
-                    {[row.q1, row.one, row.three, row.five, row.inc].map((val, j) => (
-                      <td key={j} className="px-7 py-5 font-serif text-lg font-medium text-right text-ink tabular-nums">{val}</td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-5 font-sans text-xs text-muted leading-relaxed">
-            Performance is net of fees. Past performance is not indicative of future results.
-          </p>
-        </div>
-      </section>
+      {/* Performance Dashboard */}
+      <Performance />
 
       {/* CTA */}
       <section className="bg-navy-800">
