@@ -44,18 +44,18 @@ export default function StrategiesPage() {
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80&auto=format&fit=crop')` }}
         />
         <div className="absolute inset-0"
-          style={{ background: 'linear-gradient(90deg, rgba(14,35,24,0.80) 0%, rgba(14,35,24,0.40) 100%)' }}
+          style={{ background: 'linear-gradient(90deg, rgba(12,30,54,0.75) 0%, rgba(12,30,54,0.40) 60%, rgba(12,30,54,0.20) 100%)' }}
         />
         <div className="relative max-w-7xl mx-auto px-8 h-full flex items-center">
           <div className="text-white max-w-2xl">
-            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Our Strategies
             </span>
-            <h1 className="mt-4 font-serif font-light text-white leading-tight text-5xl md:text-6xl"
+            <h1 className="mt-4 font-serif font-light text-white leading-tight text-4xl md:text-5xl"
             >
               Focused strategies,<br />designed to deliver<br />long-term value.
             </h1>
-            <p className="mt-6 font-sans text-base leading-relaxed font-light text-white/80 max-w-lg">
+            <p className="mt-6 font-sans text-base leading-relaxed font-light text-white/85 max-w-lg">
               We employ a range of investment strategies across public 
               and private markets, each grounded in disciplined research 
               and patient capital.
@@ -67,7 +67,7 @@ export default function StrategiesPage() {
       {/* Strategies Grid */}
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-8 py-14">
-          <h2 className="font-serif text-2xl font-medium text-forest-900 mb-10">
+          <h2 className="font-serif text-2xl font-medium text-navy-900 mb-10">
             Our Strategies
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -84,7 +84,7 @@ export default function StrategiesPage() {
                   />
                 </div>
                 <div className="p-7 flex flex-col flex-grow">
-                  <h3 className="font-serif text-xl font-light text-forest-900">
+                  <h3 className="font-serif text-xl font-light text-navy-900">
                     {strategy.title}
                   </h3>
                   <p className="mt-3 font-sans text-sm font-light leading-relaxed text-muted flex-grow">
@@ -93,7 +93,7 @@ export default function StrategiesPage() {
                   <ul className="mt-5 flex flex-col gap-2">
                     {strategy.points.map((point) => (
                       <li key={point} className="flex gap-2 font-sans text-xs text-muted">
-                        <span className="text-forest-700 font-bold">•</span>
+                        <span className="text-navy-700 font-bold">•</span>
                         {point}
                       </li>
                     ))}
@@ -101,7 +101,7 @@ export default function StrategiesPage() {
                   <div className="border-t border-line/60 pt-4 mt-6">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-forest-700 hover:text-gold transition-colors duration-200 no-underline"
+                      className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-navy-700 hover:text-navy-600 transition-colors duration-200 no-underline"
                     >
                       Learn more
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -117,14 +117,14 @@ export default function StrategiesPage() {
       </section>
 
       {/* Performance Table */}
-      <section className="bg-parchment border-t border-b border-line">
+      <section className="bg-paper border-t border-b border-line">
         <div className="max-w-7xl mx-auto px-8 py-14">
           <div className="flex justify-between items-end mb-10">
             <div>
-              <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
+              <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
                 Track Record
               </span>
-              <h2 className="mt-3 font-serif text-2xl font-medium text-forest-900">
+              <h2 className="mt-3 font-serif text-2xl font-medium text-navy-900">
                 Strategy Performance
               </h2>
               <p className="font-sans text-xs text-muted mt-1">
@@ -135,7 +135,7 @@ export default function StrategiesPage() {
           <div className="bg-white border border-line overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-cream">
+                <tr className="bg-paper">
                   {['Strategy', 'Q1 2026', '1 Year', '3 Year', '5 Year', 'Since Inception'].map((col, i) => (
                     <th key={col} className={`px-7 py-4 font-sans text-xs font-semibold tracking-[0.14em] uppercase text-muted border-b border-line ${i === 0 ? 'text-left' : 'text-right'}`}>
                       {col}
@@ -149,8 +149,8 @@ export default function StrategiesPage() {
                   { name: 'Korbly Income Opportunities', q1: '1.6%', one: '6.1%', three: '4.3%', five: '5.2%', inc: '5.0%' },
                   { name: 'Korbly Private Credit', q1: '2.1%', one: '8.3%', three: '6.5%', five: '6.9%', inc: '7.1%' },
                 ].map((row) => (
-                  <tr key={row.name} className="border-b border-line last:border-b-0 hover:bg-gold/[0.03] transition-colors duration-150">
-                    <td className="px-7 py-5 font-sans text-sm font-medium text-forest-900">{row.name}</td>
+                  <tr key={row.name} className="border-b border-line last:border-b-0 hover:bg-navy-600/[0.03] transition-colors duration-150">
+                    <td className="px-7 py-5 font-sans text-sm font-medium text-navy-900">{row.name}</td>
                     {[row.q1, row.one, row.three, row.five, row.inc].map((val, j) => (
                       <td key={j} className="px-7 py-5 font-serif text-base font-medium text-right text-ink tabular-nums">{val}</td>
                     ))}
@@ -166,14 +166,14 @@ export default function StrategiesPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-forest-900">
+      <section className="bg-navy-800">
         <div className="max-w-7xl mx-auto px-8 py-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <p className="font-serif font-light text-white text-2xl leading-snug">
             Looking for a partner with a long-term perspective?
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-3 font-sans text-sm px-6 py-3 bg-gold text-forest-900 hover:bg-gold-light transition-all duration-200 no-underline whitespace-nowrap"
+            className="inline-flex items-center gap-3 font-sans text-sm px-6 py-3 bg-white text-navy-900 hover:bg-paper transition-all duration-200 no-underline whitespace-nowrap"
           >
             Contact Our Team
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

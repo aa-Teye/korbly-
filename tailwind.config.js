@@ -7,24 +7,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        forest: {
-          900: '#0E2318',
-          800: '#1A4033',
-          700: '#2D6A4F',
+        navy: {
+          900: '#0c1e36',
+          800: '#13294b',
+          700: '#1c3563',
+          600: '#264a82',
         },
-        gold: {
-          DEFAULT: '#C8963E',
-          light: '#E5B96A',
-        },
-        cream: '#F6F2E8',
-        parchment: '#EDE8DA',
-        muted: '#6B7B6E',
-        line: '#D5CFC0',
-        ink: '#09130F',
+        ink: '#0f1a2c',
+        paper: '#f5f6f8',
+        line: '#e3e6eb',
+        muted: '#6b7280',
       },
       fontFamily: {
-        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
-        sans: ['DM Sans', 'system-ui', 'sans-serif'],
+        sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+        serif: ['"IBM Plex Serif"', 'Georgia', 'serif'],
       },
     },
   },

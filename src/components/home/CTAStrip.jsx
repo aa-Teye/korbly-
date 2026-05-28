@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function CTAStrip() {
   return (
-    <section className="bg-forest-900 relative overflow-hidden">
+    <section className="bg-navy-800 relative overflow-hidden">
       
       {/* Background accent */}
       <div
@@ -29,7 +29,7 @@ export default function CTAStrip() {
 
         <Link
           to="/contact"
-          className="inline-flex items-center gap-3 font-sans text-xs font-semibold tracking-[0.08em] uppercase px-6 py-3 bg-gold text-forest-900 hover:bg-gold-light transition-colors duration-200 no-underline whitespace-nowrap flex-shrink-0"
+          className="inline-flex items-center gap-3 font-sans text-xs font-semibold tracking-[0.08em] uppercase px-6 py-3 bg-white text-navy-900 hover:bg-paper transition-colors duration-200 no-underline whitespace-nowrap flex-shrink-0"
         >
           Contact Our Team
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

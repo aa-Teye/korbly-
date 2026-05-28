@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,8 +15,46 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', system-ui, sans-serif;
-  color: #09130F;
-  background: #FDFCF9;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  color: #0f1a2c;
+  background: #ffffff;
   -webkit-font-smoothing: antialiased;
+}
+
+.logo-mark {
+  letter-spacing: 0.18em;
+  font-weight: 600;
+}
+
+.logo-sub {
+  letter-spacing: 0.28em;
+  font-size: 0.625rem;
+  font-weight: 400;
+}
+
+.eyebrow {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.card-shadow {
+  box-shadow: 0 1px 2px rgba(15,26,44,0.04), 
+              0 8px 24px rgba(15,26,44,0.06);
+}
+
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.arrow-link svg {
+  transition: transform 0.2s;
+}
+
+.arrow-link:hover svg {
+  transform: translateX(3px);
 }

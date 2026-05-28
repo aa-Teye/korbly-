@@ -22,15 +22,15 @@ export default function Thesis() {
         <div className={`transition-all duration-700 ${
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
+          <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
             Our Thesis
           </span>
-          <h2 className="mt-5 font-serif text-2xl font-medium leading-tight text-forest-900"
+          <h2 className="mt-5 font-serif text-2xl font-medium leading-tight text-navy-900"
           >
             The missing element is not capital — it is a{' '}
-            <em className="italic text-forest-700">
+            <span className="text-navy-700">
               domestically owned institution
-            </em>{' '}
+            </span>{' '}
             with the depth to deploy it.
           </h2>
           <p className="mt-7 font-sans text-sm leading-relaxed text-ink/70">
@@ -49,7 +49,7 @@ export default function Thesis() {
           </p>
           <Link
             to="/approach"
-            className="mt-8 inline-flex items-center gap-3 font-sans text-xs font-semibold uppercase text-forest-700 border-b border-forest-700 pb-px hover:text-gold hover:border-gold transition-colors duration-200 no-underline"
+            className="mt-8 inline-flex items-center gap-3 font-sans text-xs font-semibold uppercase text-navy-700 border-b border-navy-700 pb-px hover:text-navy-600 hover:border-navy-600 transition-colors duration-200 no-underline"
           >
             Explore our platforms
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -70,9 +70,9 @@ export default function Thesis() {
             className="w-full object-cover"
             style={{ aspectRatio: '4/5' }}
           />
-          {/* Gold accent border */}
+          {/* Accent border */}
           <div
-            className="absolute border border-gold/30 z-[-1]"
+            className="absolute border border-navy-600/30 z-[-1]"
             style={{
               bottom: '-2rem',
               right: '-2rem',
@@ -81,7 +81,7 @@ export default function Thesis() {
             }}
           />
           {/* Badge */}
-          <div className="absolute top-8 -left-8 bg-forest-900 text-gold px-7 py-6 font-sans text-[0.72rem] font-semibold tracking-[0.08em] uppercase text-center leading-relaxed">
+          <div className="absolute top-8 -left-8 bg-navy-900 text-navy-600 px-7 py-6 font-sans text-[0.72rem] font-semibold tracking-[0.08em] uppercase text-center leading-relaxed">
             Accra,<br />Ghana<br />Est. 2026
           </div>
         </div>

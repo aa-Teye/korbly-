@@ -31,7 +31,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-forest-900">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-navy-900">
       
       {/* Background Images Slideshow with Crossfade */}
       {slides.map((slide, idx) => (
@@ -49,14 +49,14 @@ export default function Hero() {
       {/* Dynamic light gradient overlay */}
       <div className="absolute inset-0 z-[1]"
         style={{
-          background: 'linear-gradient(105deg, rgba(14,35,24,0.75) 0%, rgba(14,35,24,0.48) 45%, rgba(26,64,51,0.30) 100%)'
+          background: 'linear-gradient(90deg, rgba(12,30,54,0.78) 0%, rgba(12,30,54,0.45) 55%, rgba(12,30,54,0.25) 100%)'
         }}
       />
 
       {/* Decorative vertical line */}
       <div className="absolute left-1/2 top-0 w-px h-full z-[1]"
         style={{
-          background: 'linear-gradient(to bottom, transparent, rgba(45,106,79,0.12), transparent)'
+          background: 'linear-gradient(to bottom, transparent, rgba(38,74,130,0.12), transparent)'
         }}
       />
 
@@ -66,8 +66,8 @@ export default function Hero() {
           <button
             key={slide.image}
             onClick={() => setCurrentSlide(idx)}
-            className={`w-2 h-2 rounded-full border border-gold transition-all duration-300 focus:outline-none ${
-              idx === currentSlide ? 'bg-gold h-6' : 'bg-transparent hover:bg-white/40'
+            className={`w-2 h-2 rounded-full border border-navy-600 transition-all duration-300 focus:outline-none ${
+              idx === currentSlide ? 'bg-navy-600 h-6' : 'bg-transparent hover:bg-white/40'
             }`}
             title={`Show image for: ${slide.title}`}
             aria-label={`Go to slide ${idx + 1}`}
@@ -83,8 +83,8 @@ export default function Hero() {
           
           {/* Eyebrow */}
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-10 h-px bg-gold" />
-            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
+            <div className="w-10 h-px bg-navy-600" />
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Africa's First Systematic Merchant Bank
             </span>
           </div>
@@ -93,7 +93,7 @@ export default function Hero() {
           <h1 className="font-serif font-light text-white leading-tight tracking-tight text-5xl md:text-6xl"
           >
             Long-Term Thinking.<br />
-            <em className="italic text-gold">Meaningful Outcomes.</em>
+            <span className="text-navy-600">Meaningful Outcomes.</span>
           </h1>
 
           {/* Lead text */}
@@ -107,7 +107,7 @@ export default function Hero() {
           <div className="mt-10 flex flex-wrap gap-5">
             <Link
               to="/approach"
-              className="inline-flex items-center gap-4 font-sans text-sm px-6 py-3 bg-gold text-forest-900 hover:bg-gold-light transition-all duration-200 no-underline shadow-md"
+              className="inline-flex items-center gap-4 font-sans text-sm px-6 py-3 bg-white text-navy-900 hover:bg-navy-700 hover:text-white transition-all duration-200 no-underline shadow-md"
             >
               Our Approach
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -116,7 +116,7 @@ export default function Hero() {
             </Link>
             <Link
               to="/investor-portal"
-              className="inline-flex items-center gap-3 font-sans text-sm px-6 py-3 text-cream border border-cream/20 hover:border-gold hover:text-gold transition-all duration-200 no-underline"
+              className="inline-flex items-center gap-3 font-sans text-sm px-6 py-3 text-white border border-white/20 hover:border-navy-600 hover:text-navy-600 transition-all duration-200 no-underline"
             >
               Investor Portal
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -129,8 +129,7 @@ export default function Hero() {
         {/* Right - Philosophy Card */}
         <div className="lg:col-span-4 lg:col-start-9">
           <div
-            className="p-10 border border-white/10 backdrop-blur-xl relative overflow-hidden"
-            style={{ background: 'rgba(14,35,24,0.78)' }}
+            className="p-9 border border-white/10 backdrop-blur bg-navy-900/95 relative overflow-hidden"
           >
             {/* Card eyebrow */}
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-white/70">
@@ -159,7 +158,7 @@ export default function Hero() {
                   <span className="font-sans text-xs text-white/55">
                     {stat.label}
                   </span>
-                  <span className="font-serif text-[1.4rem] font-medium text-gold">
+                  <span className="font-serif text-[1.4rem] font-medium text-navy-600">
                     {stat.value}
                     <span className="font-sans text-xs text-white/45 ml-1">
                       {stat.suffix}
@@ -173,10 +172,10 @@ export default function Hero() {
             <div className="mt-7 pt-5 border-t border-white/10">
               <Link
                 to="/approach"
-                className="flex items-center justify-between w-full font-sans text-sm text-white/80 hover:text-gold transition-colors duration-200 no-underline group"
+                className="flex items-center justify-between w-full font-sans text-sm text-white/80 hover:text-navy-600 transition-colors duration-200 no-underline group"
               >
                 <span>Learn more about our investment philosophy.</span>
-                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-white/20 group-hover:border-gold group-hover:text-gold ml-4 flex-shrink-0 transition-colors">
+                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-white/20 group-hover:border-navy-600 group-hover:text-navy-600 ml-4 flex-shrink-0 transition-colors">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M5 12h14M13 5l7 7-7 7"/>
                   </svg>
@@ -190,7 +189,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-[2]">
-        <div className="w-px h-10 bg-gradient-to-b from-gold to-transparent animate-pulse" />
+        <div className="w-px h-10 bg-gradient-to-b from-navy-600 to-transparent animate-pulse" />
         <span className="font-sans text-[0.62rem] tracking-[0.2em] uppercase text-white/40">
           Scroll
         </span>

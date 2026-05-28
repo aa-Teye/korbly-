@@ -53,7 +53,7 @@ export default function Platforms() {
   }, [])
 
   return (
-    <section className="bg-forest-900" ref={ref}>
+    <section className="bg-navy-900" ref={ref}>
       <div className="max-w-7xl mx-auto px-8 py-14">
         
         {/* Header */}
@@ -61,7 +61,7 @@ export default function Platforms() {
           <div className={`transition-all duration-700 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Integrated Architecture
             </span>
             <h2 className="mt-4 font-serif text-2xl font-medium text-white leading-tight"
@@ -80,20 +80,20 @@ export default function Platforms() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gold/15">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-navy-600/15">
           {platforms.map((platform, i) => (
             <div
               key={platform.num}
-              className={`bg-ink/90 p-10 hover:bg-forest-800 transition-all duration-300 group relative overflow-hidden ${
+              className={`bg-ink/90 p-10 hover:bg-navy-800 transition-all duration-300 group relative overflow-hidden ${
                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: i * 100 + 'ms' }}
             >
-              {/* Top gold line on hover */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              {/* Top border line on hover */}
+              <div className="absolute top-0 left-0 right-0 h-px bg-navy-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               
               {/* Number */}
-              <div className="font-serif text-6xl font-light text-gold/10 leading-none mb-4 select-none">
+              <div className="font-serif text-6xl font-light text-navy-600/10 leading-none mb-4 select-none">
                 {platform.num}
               </div>
 
@@ -112,7 +112,7 @@ export default function Platforms() {
                 {platform.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-sans text-[0.62rem] font-medium tracking-[0.1em] uppercase text-gold border border-gold/30 px-3 py-1"
+                    className="font-sans text-[0.62rem] font-medium tracking-[0.1em] uppercase text-navy-600 border border-navy-600/30 px-3 py-1"
                   >
                     {tag}
                   </span>

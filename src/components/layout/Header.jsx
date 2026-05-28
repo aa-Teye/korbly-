@@ -32,10 +32,10 @@ export default function Header() {
         
         {/* Logo */}
         <Link to="/" className="flex flex-col gap-[2px] no-underline">
-          <span className="font-serif text-2xl font-semibold tracking-[0.12em] text-forest-900 leading-none">
+          <span className="font-serif text-2xl font-semibold tracking-[0.12em] text-navy-900 leading-none">
             KORBLY
           </span>
-          <span className="font-sans text-[0.55rem] font-medium tracking-[0.28em] uppercase text-forest-700">
+          <span className="font-sans text-[0.55rem] font-medium tracking-[0.28em] uppercase text-navy-700">
             Investment Partners
           </span>
         </Link>
@@ -48,13 +48,13 @@ export default function Header() {
               to={link.path}
               className={`relative font-sans text-[0.82rem] font-normal tracking-wide no-underline transition-colors duration-150 group
                 ${location.pathname === link.path 
-                  ? 'text-forest-700' 
-                  : 'text-ink hover:text-forest-700'
+                  ? 'text-navy-700' 
+                  : 'text-ink hover:text-navy-700'
                 }`}
             >
               {link.label}
               <span
-                className={`absolute bottom-[-4px] left-0 h-[1px] bg-gold transition-all duration-300
+                className={`absolute bottom-[-4px] left-0 h-[1px] bg-navy-600 transition-all duration-300
                   ${location.pathname === link.path 
                     ? 'w-full' 
                     : 'w-0 group-hover:w-full'
@@ -68,14 +68,14 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <Link
             to="/contact"
-            className="font-sans text-[0.78rem] font-medium tracking-[0.06em] px-5 py-[0.65rem] bg-forest-900 text-cream hover:bg-forest-800 transition-colors duration-200 no-underline"
+            className="font-sans text-[0.78rem] font-medium tracking-[0.06em] px-5 py-[0.65rem] bg-navy-900 text-white hover:bg-navy-800 transition-colors duration-200 no-underline"
           >
             Contact Us
           </Link>
 
           <button
             aria-label="Search"
-            className="text-forest-900 hover:text-forest-700 transition-colors"
+            className="text-navy-900 hover:text-navy-700 transition-colors"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
               <circle cx="11" cy="11" r="7"/>

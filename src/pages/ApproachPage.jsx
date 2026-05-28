@@ -45,18 +45,18 @@ export default function ApproachPage() {
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1920&q=80&auto=format&fit=crop')` }}
         />
         <div className="absolute inset-0"
-          style={{ background: 'linear-gradient(90deg, rgba(14,35,24,0.80) 0%, rgba(14,35,24,0.40) 100%)' }}
+          style={{ background: 'linear-gradient(90deg, rgba(12,30,54,0.75) 0%, rgba(12,30,54,0.40) 60%, rgba(12,30,54,0.20) 100%)' }}
         />
         <div className="relative max-w-7xl mx-auto px-8 h-full flex items-center">
           <div className="text-white max-w-2xl">
-            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Investment Approach
             </span>
-            <h1 className="mt-4 font-serif font-light text-white leading-tight text-5xl md:text-6xl"
+            <h1 className="mt-4 font-serif font-light text-white leading-tight text-4xl md:text-5xl"
             >
               Disciplined process.<br />Patient capital.<br />Aligned interests.
             </h1>
-            <p className="mt-6 font-sans text-base leading-relaxed font-light text-white/80 max-w-lg">
+            <p className="mt-6 font-sans text-base leading-relaxed font-light text-white/85 max-w-lg">
               Our approach is built on rigorous research, deep operational 
               insight, and a commitment to long-term partnership with the 
               businesses we back.
@@ -71,17 +71,17 @@ export default function ApproachPage() {
           
           {/* Process */}
           <div>
-            <h2 className="font-serif text-2xl font-medium text-forest-900 mb-10">
+            <h2 className="font-serif text-2xl font-medium text-navy-900 mb-10">
               Our Process
             </h2>
             <ol className="flex flex-col gap-8">
               {steps.map((step) => (
                 <li key={step.num} className="flex gap-6">
-                  <div className="font-serif text-4xl text-forest-700 w-10 shrink-0 leading-none">
+                  <div className="font-serif text-4xl text-navy-700 w-10 shrink-0 leading-none">
                     {step.num}
                   </div>
                   <div>
-                    <h3 className="font-sans font-semibold text-forest-900">
+                    <h3 className="font-sans font-semibold text-navy-900">
                       {step.title}
                     </h3>
                     <p className="mt-2 font-sans text-sm font-light leading-relaxed text-muted">
@@ -94,14 +94,14 @@ export default function ApproachPage() {
           </div>
 
           {/* What sets us apart */}
-          <div className="bg-cream p-10">
-            <h2 className="font-serif text-2xl font-medium text-forest-900 mb-6">
+          <div className="bg-paper p-10">
+            <h2 className="font-serif text-2xl font-medium text-navy-900 mb-6">
               What Sets Us Apart
             </h2>
             <ul className="flex flex-col gap-4">
               {differentiators.map((item) => (
                 <li key={item} className="flex gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" strokeWidth="2" className="mt-0.5 shrink-0">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="mt-0.5 shrink-0 text-navy-700">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
                   <span className="font-sans text-sm font-light text-muted">
@@ -116,13 +116,13 @@ export default function ApproachPage() {
       </section>
 
       {/* Risk Management */}
-      <section className="bg-parchment border-t border-line">
+      <section className="bg-paper border-t border-line">
         <div className="max-w-7xl mx-auto px-8 py-14 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Risk Management
             </span>
-            <h2 className="mt-4 font-serif text-2xl font-medium text-forest-900 mb-6">
+            <h2 className="mt-4 font-serif text-2xl font-medium text-navy-900 mb-6">
               Preserving capital is as important as growing it.
             </h2>
             <p className="font-sans text-sm font-light leading-relaxed text-muted mb-4">

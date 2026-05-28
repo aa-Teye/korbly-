@@ -33,17 +33,17 @@ export default function Insights() {
         {/* Header */}
         <div className="flex justify-between items-end mb-14">
           <div>
-            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Research & Commentary
             </span>
-            <h2 className="mt-3 font-serif text-2xl font-medium text-forest-900"
+            <h2 className="mt-3 font-serif text-2xl font-medium text-navy-900"
             >
               Featured Insights
             </h2>
           </div>
           <Link
             to="/insights"
-            className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-forest-700 border-b border-transparent hover:border-gold hover:text-gold transition-all duration-200 no-underline whitespace-nowrap pb-px"
+            className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-navy-700 border-b border-transparent hover:border-navy-600 hover:text-navy-600 transition-all duration-200 no-underline whitespace-nowrap pb-px"
           >
             View all insights
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -56,7 +56,7 @@ export default function Insights() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-line">
           
           {/* Featured article - spans 2 columns */}
-          <article className="lg:col-span-2 bg-cream flex flex-col overflow-hidden group">
+          <article className="lg:col-span-2 bg-paper flex flex-col overflow-hidden group">
             <div className="overflow-hidden">
               <img
                 src={articles[0].image}
@@ -66,19 +66,19 @@ export default function Insights() {
             </div>
             <div className="p-8 flex flex-col flex-1">
               <div className="flex items-center gap-4 mb-4">
-                <span className="font-sans text-[0.65rem] font-semibold tracking-[0.16em] uppercase text-gold">
+                <span className="font-sans text-[0.65rem] font-semibold tracking-[0.16em] uppercase text-navy-600">
                   {articles[0].category}
                 </span>
                 <span className="font-sans text-xs text-muted">
                   {articles[0].date}
                 </span>
               </div>
-              <h3 className="font-serif text-[1.85rem] font-light text-forest-900 leading-snug flex-1">
+              <h3 className="font-serif text-[1.85rem] font-light text-navy-900 leading-snug flex-1">
                 {articles[0].title}
               </h3>
               <Link
                 to="/insights"
-                className="mt-6 inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-forest-700 hover:text-gold transition-colors duration-200 no-underline"
+                className="mt-6 inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-navy-700 hover:text-navy-600 transition-colors duration-200 no-underline"
               >
                 Read article
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -92,7 +92,7 @@ export default function Insights() {
           <div className="flex flex-col gap-px">
             
             {/* Article 2 */}
-            <article className="bg-cream flex flex-col overflow-hidden group flex-1">
+            <article className="bg-paper flex flex-col overflow-hidden group flex-1">
               <div className="overflow-hidden">
                 <img
                   src={articles[1].image}
@@ -102,19 +102,19 @@ export default function Insights() {
               </div>
               <div className="p-6 flex flex-col flex-1">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="font-sans text-[0.65rem] font-semibold tracking-[0.16em] uppercase text-gold">
+                  <span className="font-sans text-[0.65rem] font-semibold tracking-[0.16em] uppercase text-navy-600">
                     {articles[1].category}
                   </span>
                   <span className="font-sans text-xs text-muted">
                     {articles[1].date}
                   </span>
                 </div>
-                <h3 className="font-serif text-[1.35rem] font-light text-forest-900 leading-snug flex-1">
+                <h3 className="font-serif text-[1.35rem] font-light text-navy-900 leading-snug flex-1">
                   {articles[1].title}
                 </h3>
                 <Link
                   to="/insights"
-                  className="mt-4 inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-forest-700 hover:text-gold transition-colors duration-200 no-underline"
+                  className="mt-4 inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-navy-700 hover:text-navy-600 transition-colors duration-200 no-underline"
                 >
                   Read article
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -131,10 +131,10 @@ export default function Insights() {
                 alt={articles[2].title}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-forest-900/80" />
+              <div className="absolute inset-0 bg-navy-900/80" />
               <div className="relative p-6 flex flex-col h-full justify-end">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="font-sans text-[0.65rem] font-semibold tracking-[0.16em] uppercase text-gold-light">
+                  <span className="font-sans text-[0.65rem] font-semibold tracking-[0.16em] uppercase text-navy-700">
                     {articles[2].category}
                   </span>
                   <span className="font-sans text-xs text-white/45">
@@ -146,7 +146,7 @@ export default function Insights() {
                 </h3>
                 <Link
                   to="/insights"
-                  className="mt-4 inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-gold-light hover:text-white transition-colors duration-200 no-underline"
+                  className="mt-4 inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-navy-700 hover:text-white transition-colors duration-200 no-underline"
                 >
                   Read article
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

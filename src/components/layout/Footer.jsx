@@ -25,7 +25,7 @@ export default function Footer() {
 
         {/* Our Firm */}
         <div>
-          <div className="font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-gold mb-5">
+          <div className="font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-navy-600 mb-5">
             Our Firm
           </div>
           <ul className="flex flex-col gap-3">
@@ -44,7 +44,7 @@ export default function Footer() {
 
         {/* Strategies */}
         <div>
-          <div className="font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-gold mb-5">
+          <div className="font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-navy-600 mb-5">
             Strategies
           </div>
           <ul className="flex flex-col gap-3">
@@ -68,7 +68,7 @@ export default function Footer() {
 
         {/* Resources */}
         <div>
-          <div className="font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-gold mb-5">
+          <div className="font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-navy-600 mb-5">
             Resources
           </div>
           <ul className="flex flex-col gap-3">
@@ -92,7 +92,7 @@ export default function Footer() {
 
         {/* Connect */}
         <div>
-          <div className="font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-gold mb-5">
+          <div className="font-sans text-[0.7rem] font-semibold tracking-[0.2em] uppercase text-navy-600 mb-5">
             Connect
           </div>
           <ul className="flex flex-col gap-3 text-xs font-light">
