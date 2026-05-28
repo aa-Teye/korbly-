@@ -1,4 +1,5 @@
 import Hero from '../components/home/Hero'
+import Ticker from '../components/home/Ticker'
 import Pillars from '../components/home/Pillars'
 import Thesis from '../components/home/Thesis'
 import Platforms from '../components/home/Platforms'
@@ -10,6 +11,7 @@ export default function HomePage() {
   return (
     <div>
       <Hero />
+      <Ticker />
       <Pillars />
       <Thesis />
       <Platforms />

@@ -31,7 +31,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-navy-900">
+    <section className="relative h-[60vh] flex items-center overflow-hidden bg-navy-900">
       
       {/* Background Images Slideshow with Crossfade */}
       {slides.map((slide, idx) => (
@@ -75,13 +75,13 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-8xl mx-auto px-10 w-full py-20 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center z-[2]">
+      <div className="relative max-w-8xl mx-auto px-10 w-full py-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center z-[2]">
         
         {/* Left - Main Content */}
         <div className="lg:col-span-7">
           
           {/* Eyebrow */}
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex items-center gap-4 mb-4">
             <div className="w-10 h-px bg-navy-600" />
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-navy-600">
               Africa's First Systematic Merchant Bank
@@ -89,21 +89,21 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-serif font-light text-white leading-tight tracking-tight text-5xl md:text-6xl lg:text-7xl"
+          <h1 className="font-serif font-light text-white leading-tight tracking-tight text-4xl md:text-5xl lg:text-6xl"
           >
             Long-Term Thinking.<br />
             <span className="text-navy-600">Meaningful Outcomes.</span>
           </h1>
 
           {/* Lead text */}
-          <p className="mt-8 max-w-xl font-sans text-lg leading-relaxed font-light text-white/75">
+          <p className="mt-4 max-w-xl font-sans text-base leading-relaxed font-light text-white/75">
             Korbly Investment Partners is a private investment firm 
             focused on generating enduring value through discipline, 
             experience, and alignment. Based in Accra, Ghana.
           </p>
 
           {/* CTA Buttons */}
-          <div className="mt-10 flex flex-wrap gap-5">
+          <div className="mt-6 flex flex-wrap gap-4">
             <Link
               to="/approach"
               className="inline-flex items-center gap-4 font-sans text-sm px-6 py-3 bg-white text-navy-900 hover:bg-navy-700 hover:text-white transition-all duration-200 no-underline shadow-md"
@@ -128,7 +128,7 @@ export default function Hero() {
         {/* Right - Philosophy Card */}
         <div className="lg:col-span-4 lg:col-start-9">
           <div
-            className="p-10 border border-white/10 backdrop-blur bg-navy-900/95 relative overflow-hidden"
+            className="p-8 border border-white/10 backdrop-blur bg-navy-900/95 relative overflow-hidden"
           >
             {/* Card eyebrow */}
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-white/70">
@@ -136,12 +136,12 @@ export default function Hero() {
             </span>
 
             {/* Card title */}
-            <h2 className="mt-5 font-serif text-3xl font-medium text-white leading-snug">
+            <h2 className="mt-3 font-serif text-xl font-medium text-white leading-snug">
               We partner with exceptional management teams to build great businesses.
             </h2>
 
             {/* Divider */}
-            <div className="my-7 border-t border-white/10" />
+            <div className="my-4 border-t border-white/10" />
 
             {/* Stats */}
             <div className="flex flex-col gap-0">
@@ -152,12 +152,12 @@ export default function Hero() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="flex justify-between items-baseline py-3 border-b border-white/[0.06] last:border-b-0"
+                  className="flex justify-between items-baseline py-2 border-b border-white/[0.06] last:border-b-0"
                 >
                   <span className="font-sans text-xs text-white/55">
                     {stat.label}
                   </span>
-                  <span className="font-serif text-[1.4rem] font-medium text-navy-600">
+                  <span className="font-serif text-base font-medium text-navy-600">
                     {stat.value}
                     <span className="font-sans text-xs text-white/45 ml-1">
                       {stat.suffix}
@@ -168,14 +168,14 @@ export default function Hero() {
             </div>
 
             {/* Card link with customized circle-wrapped chevron */}
-            <div className="mt-7 pt-5 border-t border-white/10">
+            <div className="mt-4 pt-3 border-t border-white/10">
               <Link
                 to="/approach"
-                className="flex items-center justify-between w-full font-sans text-sm text-white/80 hover:text-navy-600 transition-colors duration-200 no-underline group"
+                className="flex items-center justify-between w-full font-sans text-xs text-white/80 hover:text-navy-600 transition-colors duration-200 no-underline group"
               >
-                <span>Learn more about our investment philosophy.</span>
-                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-white/20 group-hover:border-navy-600 group-hover:text-navy-600 ml-4 flex-shrink-0 transition-colors">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <span>Learn more about our philosophy.</span>
+                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full border border-white/20 group-hover:border-navy-600 group-hover:text-navy-600 ml-4 flex-shrink-0 transition-colors">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M5 12h14M13 5l7 7-7 7"/>
                   </svg>
                 </span>
@@ -187,9 +187,9 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-[2]">
-        <div className="w-px h-10 bg-gradient-to-b from-navy-600 to-transparent animate-pulse" />
-        <span className="font-sans text-[0.62rem] tracking-[0.2em] uppercase text-white/40">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-[2]">
+        <div className="w-px h-6 bg-gradient-to-b from-navy-600 to-transparent animate-pulse" />
+        <span className="font-sans text-[0.55rem] tracking-[0.2em] uppercase text-white/40">
           Scroll
         </span>
       </div>
