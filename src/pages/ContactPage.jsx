@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useTheme } from '../context/ThemeContext'
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -13,8 +12,6 @@ export default function ContactPage() {
     interest: 'Sovereign Advisory & SPVs',
     message: '',
   })
-  const { theme } = useTheme()
-  const primary = theme === 'navy' ? 'navy' : 'burgundy'
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -33,11 +30,11 @@ export default function ContactPage() {
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80&auto=format&fit=crop')` }}
         />
         <div className="absolute inset-0"
-          style={{ background: `linear-gradient(90deg, ${theme === 'navy' ? 'rgba(12,30,54,0.80)' : 'rgba(74,14,31,0.80)'} 0%, ${theme === 'navy' ? 'rgba(12,30,54,0.40)' : 'rgba(74,14,31,0.40)'} 100%)` }}
+          style={{ background: 'linear-gradient(90deg, rgba(14,35,24,0.80) 0%, rgba(14,35,24,0.40) 100%)' }}
         />
         <div className="relative max-w-7xl mx-auto px-8 h-full flex items-center">
           <div className="text-white max-w-2xl">
-            <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-600`}>
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
               Contact Us
             </span>
             <h1 className="mt-4 font-serif font-light text-white leading-tight text-5xl md:text-6xl"
@@ -53,7 +50,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Grid Section */}
-      <section className="bg-paper border-b border-line">
+      <section className="bg-cream/40 border-b border-line">
         <div className="max-w-7xl mx-auto px-8 py-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             
@@ -61,23 +58,23 @@ export default function ContactPage() {
             <div className="lg:col-span-5 flex flex-col gap-10">
               
               <div>
-                <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-700 block mb-4`}>
+                <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-forest-700 block mb-4">
                   Flagship Office
                 </span>
-                <h2 className={`font-serif text-2xl font-medium text-${primary}-900 leading-snug mb-6`}>
+                <h2 className="font-serif text-2xl font-medium text-forest-900 leading-snug mb-6">
                   Accra Headquarters
                 </h2>
                 
                 {/* Physical Coordinates */}
                 <div className="flex items-start gap-4 mb-6">
-                  <div className={`text-${primary}-700 mt-1 shrink-0`}>
+                  <div className="text-forest-700 mt-1 shrink-0">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                       <circle cx="12" cy="10" r="3" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className={`font-sans font-semibold text-xs text-${primary}-900 uppercase tracking-wider`}>
+                    <h3 className="font-sans font-semibold text-xs text-forest-900 uppercase tracking-wider">
                       Address
                     </h3>
                     <p className="mt-1 font-sans text-sm font-light leading-relaxed text-muted">
@@ -88,15 +85,15 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Telephone */}
+                {/* Phone Line */}
                 <div className="flex items-start gap-4 mb-6">
-                  <div className={`text-${primary}-700 mt-1 shrink-0`}>
+                  <div className="text-forest-700 mt-1 shrink-0">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className={`font-sans font-semibold text-xs text-${primary}-900 uppercase tracking-wider`}>
+                    <h3 className="font-sans font-semibold text-xs text-forest-900 uppercase tracking-wider">
                       Phone Line
                     </h3>
                     <p className="mt-1 font-sans text-sm font-light text-muted">
@@ -107,14 +104,14 @@ export default function ContactPage() {
 
                 {/* Main Email */}
                 <div className="flex items-start gap-4">
-                  <div className={`text-${primary}-700 mt-1 shrink-0`}>
+                  <div className="text-forest-700 mt-1 shrink-0">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                       <polyline points="22,6 12,13 2,6" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className={`font-sans font-semibold text-xs text-${primary}-900 uppercase tracking-wider`}>
+                    <h3 className="font-sans font-semibold text-xs text-forest-900 uppercase tracking-wider">
                       General Email
                     </h3>
                     <p className="mt-1 font-sans text-sm font-light text-muted">
@@ -127,24 +124,24 @@ export default function ContactPage() {
 
               {/* Departmental Emails */}
               <div className="border-t border-line/60 pt-8">
-                <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-700 block mb-4`}>
+                <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-forest-700 block mb-4">
                   Advisory Channels
                 </span>
                 <div className="grid grid-cols-2 gap-6 font-sans text-xs">
                   <div>
-                    <h4 className={`font-semibold text-${primary}-900 uppercase tracking-wider`}>Investor Relations</h4>
+                    <h4 className="font-semibold text-forest-900 uppercase tracking-wider">Investor Relations</h4>
                     <p className="mt-1 font-light text-muted">ir@korbly.com</p>
                   </div>
                   <div>
-                    <h4 className={`font-semibold text-${primary}-900 uppercase tracking-wider`}>Sovereign SPVs</h4>
+                    <h4 className="font-semibold text-forest-900 uppercase tracking-wider">Sovereign SPVs</h4>
                     <p className="mt-1 font-light text-muted">spv@korbly.com</p>
                   </div>
                   <div className="mt-2">
-                    <h4 className={`font-semibold text-${primary}-900 uppercase tracking-wider`}>Press & Media</h4>
+                    <h4 className="font-semibold text-forest-900 uppercase tracking-wider">Press & Media</h4>
                     <p className="mt-1 font-light text-muted">press@korbly.com</p>
                   </div>
                   <div className="mt-2">
-                    <h4 className={`font-semibold text-${primary}-900 uppercase tracking-wider`}>Statutory / NPRA</h4>
+                    <h4 className="font-semibold text-forest-900 uppercase tracking-wider">Statutory / NPRA</h4>
                     <p className="mt-1 font-light text-muted">compliance@korbly.com</p>
                   </div>
                 </div>
@@ -157,12 +154,12 @@ export default function ContactPage() {
               
               {submitted ? (
                 <div className="text-center py-12 font-sans">
-                  <div className={`w-16 h-16 bg-paper border border-${primary}-600 rounded-full flex items-center justify-center mx-auto mb-6 text-${primary}-700`}>
+                  <div className="w-16 h-16 bg-cream border border-gold rounded-full flex items-center justify-center mx-auto mb-6 text-forest-700">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M20 6L9 17l-5-5" />
                     </svg>
                   </div>
-                  <h3 className={`font-serif text-2xl font-medium text-${primary}-900 mb-3`}>
+                  <h3 className="font-serif text-2xl font-medium text-forest-900 mb-3">
                     Inquiry Registered
                   </h3>
                   <p className="font-sans text-sm font-light leading-relaxed text-muted max-w-md mx-auto">
@@ -173,7 +170,7 @@ export default function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <h3 className={`font-serif text-2xl font-medium text-${primary}-900 mb-2`}>
+                    <h3 className="font-serif text-2xl font-medium text-forest-900 mb-2">
                       Partnership Inquiry
                     </h3>
                     <p className="font-sans text-xs text-muted font-light leading-relaxed">
@@ -184,24 +181,24 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className={`font-sans text-xs font-semibold uppercase tracking-wider text-${primary}-900 block mb-2`}>First Name</label>
+                      <label className="font-sans text-xs font-semibold uppercase tracking-wider text-forest-900 block mb-2">First Name</label>
                       <input
                         type="text"
                         required
                         value={formData.firstName}
                         onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                        className={`w-full bg-paper border border-line px-4 py-3 text-sm text-${primary}-900 placeholder-muted/50 focus:outline-none focus:border-${primary}-600 transition-colors font-sans`}
+                        className="w-full bg-cream/[0.15] border border-line px-4 py-3 text-sm text-forest-900 placeholder-muted/50 focus:outline-none focus:border-gold transition-colors font-sans"
                         placeholder="John"
                       />
                     </div>
                     <div>
-                      <label className={`font-sans text-xs font-semibold uppercase tracking-wider text-${primary}-900 block mb-2`}>Last Name</label>
+                      <label className="font-sans text-xs font-semibold uppercase tracking-wider text-forest-900 block mb-2">Last Name</label>
                       <input
                         type="text"
                         required
                         value={formData.lastName}
                         onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                        className={`w-full bg-paper border border-line px-4 py-3 text-sm text-${primary}-900 placeholder-muted/50 focus:outline-none focus:border-${primary}-600 transition-colors font-sans`}
+                        className="w-full bg-cream/[0.15] border border-line px-4 py-3 text-sm text-forest-900 placeholder-muted/50 focus:outline-none focus:border-gold transition-colors font-sans"
                         placeholder="Doe"
                       />
                     </div>
@@ -209,24 +206,24 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className={`font-sans text-xs font-semibold uppercase tracking-wider text-${primary}-900 block mb-2`}>Institutional Email</label>
+                      <label className="font-sans text-xs font-semibold uppercase tracking-wider text-forest-900 block mb-2">Institutional Email</label>
                       <input
                         type="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className={`w-full bg-paper border border-line px-4 py-3 text-sm text-${primary}-900 placeholder-muted/50 focus:outline-none focus:border-${primary}-600 transition-colors font-sans`}
+                        className="w-full bg-cream/[0.15] border border-line px-4 py-3 text-sm text-forest-900 placeholder-muted/50 focus:outline-none focus:border-gold transition-colors font-sans"
                         placeholder="john.doe@firm.com"
                       />
                     </div>
                     <div>
-                      <label className={`font-sans text-xs font-semibold uppercase tracking-wider text-${primary}-900 block mb-2`}>Telephone Number</label>
+                      <label className="font-sans text-xs font-semibold uppercase tracking-wider text-forest-900 block mb-2">Telephone Number</label>
                       <input
                         type="tel"
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className={`w-full bg-paper border border-line px-4 py-3 text-sm text-${primary}-900 placeholder-muted/50 focus:outline-none focus:border-${primary}-600 transition-colors font-sans`}
+                        className="w-full bg-cream/[0.15] border border-line px-4 py-3 text-sm text-forest-900 placeholder-muted/50 focus:outline-none focus:border-gold transition-colors font-sans"
                         placeholder="+233 20 123 4567"
                       />
                     </div>
@@ -234,22 +231,22 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className={`font-sans text-xs font-semibold uppercase tracking-wider text-${primary}-900 block mb-2`}>Corporate Entity</label>
+                      <label className="font-sans text-xs font-semibold uppercase tracking-wider text-forest-900 block mb-2">Corporate Entity</label>
                       <input
                         type="text"
                         required
                         value={formData.firm}
                         onChange={(e) => setFormData({ ...formData, firm: e.target.value })}
-                        className={`w-full bg-paper border border-line px-4 py-3 text-sm text-${primary}-900 placeholder-muted/50 focus:outline-none focus:border-${primary}-600 transition-colors font-sans`}
+                        className="w-full bg-cream/[0.15] border border-line px-4 py-3 text-sm text-forest-900 placeholder-muted/50 focus:outline-none focus:border-gold transition-colors font-sans"
                         placeholder="Ministry / Pension Fund Name"
                       />
                     </div>
                     <div>
-                      <label className={`font-sans text-xs font-semibold uppercase tracking-wider text-${primary}-900 block mb-2`}>Entity Type</label>
+                      <label className="font-sans text-xs font-semibold uppercase tracking-wider text-forest-900 block mb-2">Entity Type</label>
                       <select
                         value={formData.entityType}
                         onChange={(e) => setFormData({ ...formData, entityType: e.target.value })}
-                        className={`w-full bg-white border border-line px-4 py-3 text-sm text-${primary}-900 focus:outline-none focus:border-${primary}-600 transition-colors font-sans`}
+                        className="w-full bg-white border border-line px-4 py-3 text-sm text-forest-900 focus:outline-none focus:border-gold transition-colors font-sans"
                       >
                         <option value="Institutional Allocator">Institutional Allocator</option>
                         <option value="Sovereign / Government Agency">Sovereign / Government Agency</option>
@@ -261,11 +258,11 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className={`font-sans text-xs font-semibold uppercase tracking-wider text-${primary}-900 block mb-2`}>Primary Advisory Channel</label>
+                    <label className="font-sans text-xs font-semibold uppercase tracking-wider text-forest-900 block mb-2">Primary Advisory Channel</label>
                     <select
                       value={formData.interest}
                       onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                      className={`w-full bg-white border border-line px-4 py-3 text-sm text-${primary}-900 focus:outline-none focus:border-${primary}-600 transition-colors font-sans`}
+                      className="w-full bg-white border border-line px-4 py-3 text-sm text-forest-900 focus:outline-none focus:border-gold transition-colors font-sans"
                     >
                       <option value="Sovereign Advisory & SPVs">Sovereign Advisory & SPVs</option>
                       <option value="NPRA Pension Fund Management">NPRA Pension Fund Management (Tier 2/3)</option>
@@ -275,20 +272,20 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className={`font-sans text-xs font-semibold uppercase tracking-wider text-${primary}-900 block mb-2`}>Detailed Strategic Brief</label>
+                    <label className="font-sans text-xs font-semibold uppercase tracking-wider text-forest-900 block mb-2">Detailed Strategic Brief</label>
                     <textarea
                       required
                       rows="4"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className={`w-full bg-paper border border-line px-4 py-3 text-sm text-${primary}-900 placeholder-muted/50 focus:outline-none focus:border-${primary}-600 transition-colors font-sans`}
+                      className="w-full bg-cream/[0.15] border border-line px-4 py-3 text-sm text-forest-900 placeholder-muted/50 focus:outline-none focus:border-gold transition-colors font-sans"
                       placeholder="Outline the parameters of your sovereign transaction or investment mandate..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className={`w-full py-4 bg-${primary}-900 hover:bg-${primary}-800 text-white transition-colors duration-200 text-sm font-semibold tracking-widest uppercase font-sans flex items-center justify-center gap-3`}
+                    className="w-full py-4 bg-gold text-forest-900 hover:bg-gold-light transition-colors duration-200 text-xs font-semibold tracking-widest uppercase font-sans flex items-center justify-center gap-3"
                   >
                     Submit Advisory Request
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -309,10 +306,10 @@ export default function ContactPage() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-8 py-14">
           <div className="text-center max-w-xl mx-auto mb-16">
-            <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-700`}>
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
               Capital Network
             </span>
-            <h2 className={`mt-3 font-serif text-2xl font-medium text-${primary}-900`}>
+            <h2 className="mt-3 font-serif text-2xl font-medium text-forest-900">
               Our Operational Footprint
             </h2>
             <p className="font-sans text-xs text-muted font-light leading-relaxed mt-2">
@@ -324,8 +321,8 @@ export default function ContactPage() {
             
             {/* Hub 1 */}
             <div className="border border-line/60 p-8 flex flex-col">
-              <span className={`font-serif text-${primary}-700 text-4xl leading-none mb-4 font-light`}>Accra</span>
-              <h3 className={`font-sans font-semibold text-xs text-${primary}-900 uppercase tracking-wider mb-3`}>
+              <span className="font-serif text-gold text-4xl leading-none mb-4 font-light">Accra</span>
+              <h3 className="font-sans font-semibold text-xs text-forest-900 uppercase tracking-wider mb-3">
                 Flagship HQ & Structuring
               </h3>
               <p className="font-sans text-xs font-light leading-relaxed text-muted flex-1">
@@ -335,8 +332,8 @@ export default function ContactPage() {
 
             {/* Hub 2 */}
             <div className="border border-line/60 p-8 flex flex-col">
-              <span className={`font-serif text-${primary}-700 text-4xl leading-none mb-4 font-light`}>Abidjan</span>
-              <h3 className={`font-sans font-semibold text-xs text-${primary}-900 uppercase tracking-wider mb-3`}>
+              <span className="font-serif text-gold text-4xl leading-none mb-4 font-light">Abidjan</span>
+              <h3 className="font-sans font-semibold text-xs text-forest-900 uppercase tracking-wider mb-3">
                 Regional Francophone Gateway
               </h3>
               <p className="font-sans text-xs font-light leading-relaxed text-muted flex-1">
@@ -346,8 +343,8 @@ export default function ContactPage() {
 
             {/* Hub 3 */}
             <div className="border border-line/60 p-8 flex flex-col">
-              <span className={`font-serif text-${primary}-700 text-4xl leading-none mb-4 font-light`}>London</span>
-              <h3 className={`font-sans font-semibold text-xs text-${primary}-900 uppercase tracking-wider mb-3`}>
+              <span className="font-serif text-gold text-4xl leading-none mb-4 font-light">London</span>
+              <h3 className="font-sans font-semibold text-xs text-forest-900 uppercase tracking-wider mb-3">
                 Global Allocator Pipeline
               </h3>
               <p className="font-sans text-xs font-light leading-relaxed text-muted flex-1">

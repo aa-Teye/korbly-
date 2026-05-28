@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useTheme } from '../context/ThemeContext'
 
 const featuredArticle = {
   category: 'Market Commentary',
@@ -58,8 +57,6 @@ const articlesArchive = [
 export default function InsightsPage() {
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
-  const { theme } = useTheme()
-  const primary = theme === 'navy' ? 'navy' : 'burgundy'
 
   const handleSubscribe = (e) => {
     e.preventDefault()
@@ -79,11 +76,11 @@ export default function InsightsPage() {
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80&auto=format&fit=crop')` }}
         />
         <div className="absolute inset-0"
-          style={{ background: `linear-gradient(90deg, ${theme === 'navy' ? 'rgba(12,30,54,0.80)' : 'rgba(74,14,31,0.80)'} 0%, ${theme === 'navy' ? 'rgba(12,30,54,0.40)' : 'rgba(74,14,31,0.40)'} 100%)` }}
+          style={{ background: 'linear-gradient(90deg, rgba(14,35,24,0.80) 0%, rgba(14,35,24,0.40) 100%)' }}
         />
         <div className="relative max-w-7xl mx-auto px-8 h-full flex items-center">
           <div className="text-white max-w-2xl">
-            <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-600`}>
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
               Research & Commentary
             </span>
             <h1 className="mt-4 font-serif font-light text-white leading-tight text-5xl md:text-6xl"
@@ -101,7 +98,7 @@ export default function InsightsPage() {
       {/* Featured Insight Section */}
       <section className="bg-white border-b border-line">
         <div className="max-w-7xl mx-auto px-8 py-14">
-          <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-700 mb-8 block`}>
+          <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold mb-8 block">
             Featured Analysis
           </span>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -122,19 +119,19 @@ export default function InsightsPage() {
                 <span>•</span>
                 <span>{featuredArticle.readTime}</span>
               </div>
-              <h2 className={`font-serif text-2xl font-medium text-${primary}-900 leading-snug mb-5`}>
+              <h2 className="font-serif text-2xl font-medium text-forest-900 leading-snug mb-5">
                 {featuredArticle.title}
               </h2>
-              <p className="font-sans text-sm leading-relaxed text-muted mb-6">
+              <p className="font-sans text-sm font-light leading-relaxed text-muted mb-6">
                 {featuredArticle.desc}
               </p>
               <div className="flex items-center justify-between border-t border-line pt-6">
-                <span className={`font-sans text-xs text-${primary}-900 font-semibold tracking-wide uppercase`}>
+                <span className="font-sans text-xs text-forest-900 font-semibold tracking-wide uppercase">
                   By {featuredArticle.author}
                 </span>
                 <Link
                   to="#"
-                  className={`inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-${primary}-700 hover:text-${primary}-600 transition-colors duration-200 no-underline`}
+                  className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-forest-700 hover:text-gold transition-colors duration-200 no-underline"
                 >
                   Read Analysis
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -149,9 +146,9 @@ export default function InsightsPage() {
       </section>
 
       {/* Research Archive Library */}
-      <section className="bg-paper border-b border-line">
+      <section className="bg-parchment">
         <div className="max-w-7xl mx-auto px-8 py-14">
-          <h2 className={`font-serif text-2xl font-medium text-${primary}-900 mb-12 border-b border-line pb-4`}>
+          <h2 className="font-serif text-2xl font-medium text-forest-900 mb-12 border-b border-line pb-4">
             Research Archive
           </h2>
           
@@ -168,7 +165,7 @@ export default function InsightsPage() {
                     alt={article.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className={`absolute top-4 left-4 bg-${primary}-900 text-white px-3 py-1 font-sans text-[0.62rem] font-semibold tracking-[0.12em] uppercase`}>
+                  <div className="absolute top-4 left-4 bg-forest-900 text-gold px-3 py-1 font-sans text-[0.6rem] font-semibold tracking-[0.12em] uppercase">
                     {article.category}
                   </div>
                 </div>
@@ -180,7 +177,7 @@ export default function InsightsPage() {
                     <span>•</span>
                     <span>{article.readTime}</span>
                   </div>
-                  <h3 className={`font-serif text-lg font-light text-${primary}-900 leading-snug flex-1 group-hover:text-${primary}-600 transition-colors duration-200`}>
+                  <h3 className="font-serif text-lg font-light text-forest-900 leading-snug flex-1 group-hover:text-gold transition-colors duration-200">
                     {article.title}
                   </h3>
                   <p className="mt-3 font-sans text-xs font-light leading-relaxed text-muted mb-5">
@@ -189,7 +186,7 @@ export default function InsightsPage() {
                   <div className="border-t border-line/60 pt-4 mt-auto">
                     <Link
                       to="#"
-                      className={`inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-${primary}-700 hover:text-${primary}-600 transition-colors duration-200 no-underline`}
+                      className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-forest-700 hover:text-gold transition-colors duration-200 no-underline"
                     >
                       Read Brief
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -206,11 +203,11 @@ export default function InsightsPage() {
       </section>
 
       {/* Institutional Newsletter Gate */}
-      <section className={`bg-${theme === 'navy' ? 'navy' : 'burgundy'}-900 relative overflow-hidden border-t border-line`}>
+      <section className="bg-forest-900 relative overflow-hidden border-t border-line">
         
         {/* Abstract vector shape */}
         <div className="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none">
-          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5" className={`w-full h-full text-${primary}-600`}>
+          <svg viewBox="0 0 100 100" fill="none" stroke="#C8963E" strokeWidth="0.5" className="w-full h-full">
             <circle cx="50" cy="50" r="40" />
             <circle cx="50" cy="50" r="30" />
             <circle cx="50" cy="50" r="20" />
@@ -220,7 +217,7 @@ export default function InsightsPage() {
         </div>
 
         <div className="relative max-w-4xl mx-auto px-8 py-14 text-center">
-          <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-600`}>
+          <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
             Intelligence Briefing
           </span>
           <h2 className="mt-4 font-serif font-light text-white text-3xl mb-4">
@@ -232,7 +229,7 @@ export default function InsightsPage() {
           </p>
 
           {subscribed ? (
-            <div className={`bg-white/10 border border-${primary}-600/30 p-6 max-w-md mx-auto text-white font-sans text-sm font-medium tracking-wide`}>
+            <div className="bg-white/10 border border-gold/30 p-6 max-w-md mx-auto text-gold font-sans text-sm font-medium tracking-wide">
               Thank you. You have been added to our institutional briefing list.
             </div>
           ) : (
@@ -243,17 +240,17 @@ export default function InsightsPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Institutional email address"
-                className={`flex-1 bg-white/10 border border-white/20 px-5 py-3 text-white text-sm placeholder-white/40 focus:outline-none focus:border-${primary}-600 transition-colors duration-200 font-sans`}
+                className="flex-1 bg-white/10 border border-white/20 px-5 py-3 text-white text-sm placeholder-white/40 focus:outline-none focus:border-gold transition-colors duration-200 font-sans"
               />
               <button
                 type="submit"
-                className={`bg-white text-ink hover:bg-white/90 transition-colors duration-200 font-sans text-xs font-semibold tracking-[0.08em] uppercase px-7 py-3 sm:py-0`}
+                className="bg-gold text-forest-900 hover:bg-gold-light transition-colors duration-200 font-sans text-xs font-semibold tracking-[0.08em] uppercase px-7 py-3 sm:py-0"
               >
                 Subscribe
               </button>
             </form>
           )}
-          <p className="mt-5 font-sans text-xs text-white/45">
+          <p className="mt-5 font-sans text-[0.68rem] text-white/45">
             By subscribing, you agree to receive institutional communications under our privacy guidelines.
           </p>
         </div>

@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useTheme } from '../context/ThemeContext'
 
 const initialVaultDocs = [
   { id: 1, name: 'Q1 2026 Sovereign Credit Fund Report.pdf', size: '2.4 MB', date: 'May 15, 2026' },
@@ -20,8 +19,6 @@ export default function InvestorPortalPage() {
   const [vaultDocs, setVaultDocs] = useState(initialVaultDocs)
   const [advisoryMessage, setAdvisoryMessage] = useState('')
   const [messageSent, setMessageSent] = useState(false)
-  const { theme } = useTheme()
-  const primary = theme === 'navy' ? 'navy' : 'burgundy'
 
   const handleLogin = (e) => {
     e.preventDefault()
@@ -59,11 +56,11 @@ export default function InvestorPortalPage() {
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80&auto=format&fit=crop')` }}
         />
         <div className="absolute inset-0"
-          style={{ background: `linear-gradient(90deg, ${theme === 'navy' ? 'rgba(12,30,54,0.80)' : 'rgba(74,14,31,0.80)'} 0%, ${theme === 'navy' ? 'rgba(12,30,54,0.40)' : 'rgba(74,14,31,0.40)'} 100%)` }}
+          style={{ background: 'linear-gradient(90deg, rgba(14,35,24,0.80) 0%, rgba(14,35,24,0.40) 100%)' }}
         />
         <div className="relative max-w-7xl mx-auto px-8 h-full flex items-center">
           <div className="text-white max-w-2xl">
-            <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-600`}>
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
               Security Protocol
             </span>
             <h1 className="mt-4 font-serif font-light text-white leading-tight text-5xl"
@@ -86,14 +83,14 @@ export default function InvestorPortalPage() {
 
           {!isAuthenticated ? (
             /* Secure Client Login Gate */
-            <div className="max-w-lg mx-auto bg-paper border border-line p-10 relative">
+            <div className="max-w-lg mx-auto bg-cream border border-line p-10 relative">
               <div className="flex items-center gap-3 mb-6">
-                <span className={`w-2.5 h-2.5 rounded-full bg-${primary}-600 animate-ping`} />
-                <span className={`font-sans text-xs font-bold tracking-[0.15em] uppercase text-${primary}-700`}>
+                <span className="w-2.5 h-2.5 rounded-full bg-gold animate-ping" />
+                <span className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-forest-700">
                   Secure Sign-In
                 </span>
               </div>
-              <h2 className={`font-serif font-light text-${primary}-900 text-2xl mb-4`}>
+              <h2 className="font-serif font-light text-forest-900 text-2xl mb-4">
                 Authenticate Credentials
               </h2>
               <p className="font-sans text-xs text-muted leading-relaxed mb-8">
@@ -103,7 +100,7 @@ export default function InvestorPortalPage() {
 
               <form onSubmit={handleLogin} className="flex flex-col gap-6">
                 <div>
-                  <label className={`block font-sans text-xs font-semibold tracking-wider text-${primary}-900 uppercase mb-2`}>
+                  <label className="block font-sans text-xs font-semibold tracking-wider text-forest-900 uppercase mb-2">
                     Institutional Client ID
                   </label>
                   <input
@@ -111,13 +108,13 @@ export default function InvestorPortalPage() {
                     required
                     value={loginData.clientId}
                     onChange={(e) => setLoginData({ ...loginData, clientId: e.target.value })}
-                    className={`w-full font-sans text-sm px-4 py-3 bg-white border border-line focus:border-${primary}-600 focus:outline-none transition-colors`}
+                    className="w-full font-sans text-sm px-4 py-3 bg-white border border-line focus:border-gold focus:outline-none transition-colors"
                     placeholder="e.g. KB-GH-XXX"
                   />
                 </div>
 
                 <div>
-                  <label className={`block font-sans text-xs font-semibold tracking-wider text-${primary}-900 uppercase mb-2`}>
+                  <label className="block font-sans text-xs font-semibold tracking-wider text-forest-900 uppercase mb-2">
                     Corporate Email Address
                   </label>
                   <input
@@ -125,13 +122,13 @@ export default function InvestorPortalPage() {
                     required
                     value={loginData.email}
                     onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
-                    className={`w-full font-sans text-sm px-4 py-3 bg-white border border-line focus:border-${primary}-600 focus:outline-none transition-colors`}
+                    className="w-full font-sans text-sm px-4 py-3 bg-white border border-line focus:border-gold focus:outline-none transition-colors"
                     placeholder="allocator@firm.com"
                   />
                 </div>
 
                 <div>
-                  <label className={`block font-sans text-xs font-semibold tracking-wider text-${primary}-900 uppercase mb-2`}>
+                  <label className="block font-sans text-xs font-semibold tracking-wider text-forest-900 uppercase mb-2">
                     Security Passkey
                   </label>
                   <input
@@ -139,13 +136,13 @@ export default function InvestorPortalPage() {
                     required
                     value={loginData.passkey}
                     onChange={(e) => setLoginData({ ...loginData, passkey: e.target.value })}
-                    className={`w-full font-sans text-sm px-4 py-3 bg-white border border-line focus:border-${primary}-600 focus:outline-none transition-colors`}
+                    className="w-full font-sans text-sm px-4 py-3 bg-white border border-line focus:border-gold focus:outline-none transition-colors"
                     placeholder="••••••••••••"
                   />
                 </div>
 
                 <div className="flex items-center gap-2 mt-2">
-                  <input type="checkbox" id="remember" defaultChecked className={`accent-${primary}-600`} />
+                  <input type="checkbox" id="remember" defaultChecked className="accent-gold" />
                   <label htmlFor="remember" className="font-sans text-xs text-muted">
                     Remember my institution identity
                   </label>
@@ -154,7 +151,7 @@ export default function InvestorPortalPage() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className={`w-full font-sans text-[0.8rem] font-semibold tracking-widest uppercase py-4 bg-${primary}-900 text-white hover:bg-${primary}-800 transition-colors duration-200 focus:outline-none flex justify-center items-center gap-3`}
+                  className="w-full font-sans text-xs font-semibold tracking-widest uppercase py-4 bg-forest-900 text-white hover:bg-forest-800 transition-colors duration-200 focus:outline-none flex justify-center items-center gap-3"
                 >
                   {isLoading ? (
                     <>
@@ -180,7 +177,7 @@ export default function InvestorPortalPage() {
               <div className="mt-8 pt-6 border-t border-line text-center">
                 <span className="font-sans text-xs text-muted">
                   First-time visitor or need access key?{' '}
-                  <a href="#/contact" className={`text-${primary}-700 font-semibold hover:underline`}>
+                  <a href="#/contact" className="text-forest-700 font-semibold hover:underline">
                     Inquire for credentials
                   </a>
                 </span>
@@ -191,25 +188,25 @@ export default function InvestorPortalPage() {
             <div className="flex flex-col gap-10 animate-fadeIn">
               
               {/* Entity Banner */}
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-paper border border-line p-7 gap-5">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-cream border border-line p-7 gap-5">
                 <div>
-                  <span className={`font-sans text-[0.62rem] font-bold tracking-[0.16em] uppercase text-${primary}-700`}>
+                  <span className="font-sans text-[0.62rem] font-bold tracking-[0.16em] uppercase text-forest-700">
                     Corporate Allocator Profile
                   </span>
-                  <h3 className={`font-serif text-2xl font-light text-${primary}-900 mt-1`}>
+                  <h3 className="font-serif text-2xl font-light text-forest-900 mt-1">
                     Social Security and National Insurance Trust (SSNIT)
                   </h3>
                   <div className="flex gap-4 mt-2 font-sans text-xs text-muted">
-                    <span>ID: <strong className={`text-${primary}-800`}>{loginData.clientId}</strong></span>
+                    <span>ID: <strong className="text-forest-800">{loginData.clientId}</strong></span>
                     <span>•</span>
-                    <span>Channel: <strong className={`text-${primary}-800`}>Sovereign Pension Fund</strong></span>
+                    <span>Channel: <strong className="text-forest-800">Sovereign Pension Fund</strong></span>
                     <span>•</span>
-                    <span>Last Access: <strong className={`text-${primary}-800`}>Just now</strong></span>
+                    <span>Last Access: <strong className="text-forest-800">Just now</strong></span>
                   </div>
                 </div>
                 <button
                   onClick={handleLogout}
-                  className={`font-sans text-xs font-semibold tracking-wider uppercase border border-${primary}-900/30 hover:border-${primary}-600 hover:text-${primary}-600 px-5 py-2.5 transition-colors focus:outline-none`}
+                  className="font-sans text-xs font-semibold tracking-wider uppercase border border-forest-900/30 hover:border-gold hover:text-gold px-5 py-2.5 transition-colors focus:outline-none"
                 >
                   Secure Sign Out
                 </button>
@@ -228,7 +225,7 @@ export default function InvestorPortalPage() {
                     <span className="block font-sans text-xs text-muted leading-tight">
                       {metric.label}
                     </span>
-                    <span className={`block font-serif text-2xl font-medium text-${primary}-900 mt-3 tabular-nums`}>
+                    <span className="block font-serif text-2xl font-medium text-forest-900 mt-3 tabular-nums">
                       {metric.value}
                     </span>
                   </div>
@@ -237,13 +234,13 @@ export default function InvestorPortalPage() {
 
               {/* Mandates and SPVs List */}
               <div>
-                <h3 className={`font-serif text-xl font-light text-${primary}-900 mb-6`}>
+                <h3 className="font-serif text-xl font-light text-forest-900 mb-6">
                   Active Asset Mandates
                 </h3>
                 <div className="bg-white border border-line overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
                     <thead>
-                      <tr className="bg-paper">
+                      <tr className="bg-cream">
                         {['Mandate Portfolio', 'Committed Capital', 'Called Capital', 'Net Asset Value', 'Mandate Net IRR', 'Status'].map((col, i) => (
                           <th key={col} className={`px-6 py-4 font-sans text-xs font-semibold tracking-[0.12em] uppercase text-muted border-b border-line ${i === 0 ? 'text-left' : 'text-right'}`}>
                             {col}
@@ -253,12 +250,12 @@ export default function InvestorPortalPage() {
                     </thead>
                     <tbody>
                       {initialMandates.map((row) => (
-                        <tr key={row.id} className={`border-b border-line last:border-b-0 hover:bg-${primary}-900/[0.02]`}>
-                          <td className={`px-6 py-5 font-sans text-sm font-semibold text-${primary}-900`}>{row.name}</td>
+                        <tr key={row.id} className="border-b border-line last:border-b-0 hover:bg-gold/[0.02]">
+                          <td className="px-6 py-5 font-sans text-sm font-semibold text-forest-900">{row.name}</td>
                           <td className="px-6 py-5 font-serif text-base text-right text-ink tabular-nums">{row.commitment}</td>
                           <td className="px-6 py-5 font-serif text-base text-right text-ink tabular-nums">{row.called}</td>
                           <td className="px-6 py-5 font-serif text-base text-right text-ink tabular-nums">{row.nav}</td>
-                          <td className={`px-6 py-5 font-serif text-base text-right text-${primary}-700 font-semibold tabular-nums`}>{row.irr}</td>
+                          <td className="px-6 py-5 font-serif text-base text-right text-forest-700 font-semibold tabular-nums">{row.irr}</td>
                           <td className="px-6 py-5 text-right">
                             <span className="inline-block font-sans text-[0.62rem] font-semibold tracking-wider uppercase px-3 py-1 bg-green-50 text-[#1B7F52] border border-[#1B7F52]/20">
                               {row.status}
@@ -276,17 +273,17 @@ export default function InvestorPortalPage() {
                 
                 {/* Vault Documents (Left Column) */}
                 <div className="lg:col-span-7">
-                  <h3 className={`font-serif text-xl font-light text-${primary}-900 mb-6 flex items-center gap-3`}>
+                  <h3 className="font-serif text-xl font-light text-forest-900 mb-6 flex items-center gap-3">
                     Secure Document Vault
-                    <span className={`font-sans text-xs px-2 py-0.5 bg-${primary}-600/15 text-${primary}-700 font-semibold rounded`}>
+                    <span className="font-sans text-xs px-2 py-0.5 bg-gold/15 text-gold font-semibold rounded animate-pulse">
                       Audited Filings
                     </span>
                   </h3>
                   <div className="flex flex-col border border-line divide-y divide-line">
                     {vaultDocs.map((doc) => (
-                      <div key={doc.id} className="p-5 flex justify-between items-center bg-white hover:bg-paper/40 transition-colors">
+                      <div key={doc.id} className="p-5 flex justify-between items-center bg-white hover:bg-cream/20 transition-colors">
                         <div>
-                          <h4 className={`font-sans text-sm font-semibold text-${primary}-900 leading-none`}>
+                          <h4 className="font-sans text-sm font-semibold text-forest-900 leading-none">
                             {doc.name}
                           </h4>
                           <span className="block mt-2 font-sans text-xs text-muted">
@@ -295,7 +292,7 @@ export default function InvestorPortalPage() {
                         </div>
                         <button
                           onClick={() => alert(`Beginning secure encrypted download for ${doc.name}...`)}
-                          className={`font-sans text-xs font-semibold tracking-wider uppercase px-4 py-2 border border-line text-${primary}-700 hover:border-${primary}-600 hover:text-${primary}-600 transition-colors focus:outline-none flex items-center gap-2`}
+                          className="font-sans text-xs font-semibold tracking-wider uppercase px-4 py-2 border border-line text-forest-700 hover:border-gold hover:text-gold transition-colors focus:outline-none flex items-center gap-2"
                         >
                           Download
                           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -308,14 +305,14 @@ export default function InvestorPortalPage() {
                 </div>
 
                 {/* Direct Channel Wire (Right Column) */}
-                <div className="lg:col-span-5 bg-paper border border-line p-8 h-fit">
+                <div className="lg:col-span-5 bg-cream border border-line p-8 h-fit">
                   <div className="flex items-center gap-3 mb-5">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#1B7F52]" />
-                    <span className={`font-sans text-xs font-bold tracking-[0.15em] uppercase text-${primary}-700`}>
+                    <span className="font-sans text-xs font-bold tracking-[0.15em] uppercase text-forest-700">
                       Advisory Channel Open
                     </span>
                   </div>
-                  <h3 className={`font-serif font-light text-${primary}-900 text-xl mb-3`}>
+                  <h3 className="font-serif font-light text-forest-900 text-xl mb-3">
                     Secure Advisory Routing
                   </h3>
                   <p className="font-sans text-xs text-muted leading-relaxed mb-6">
@@ -324,17 +321,17 @@ export default function InvestorPortalPage() {
 
                   <form onSubmit={handleSendMessage} className="flex flex-col gap-4">
                     <div>
-                      <label className={`block font-sans text-xs font-semibold tracking-wider text-${primary}-900 uppercase mb-2`}>
+                      <label className="block font-sans text-xs font-semibold tracking-wider text-forest-900 uppercase mb-2">
                         Recipient Partner
                       </label>
-                      <select className={`w-full font-sans text-xs px-3 py-2 bg-white border border-line focus:outline-none focus:border-${primary}-600`}>
+                      <select className="w-full font-sans text-xs px-3 py-2 bg-white border border-line focus:outline-none focus:border-gold">
                         <option>Kofi Mensah (Managing CIO)</option>
                         <option>Amara Diallo (Partner, Sovereign Advisory)</option>
                       </select>
                     </div>
 
                     <div>
-                      <label className={`block font-sans text-xs font-semibold tracking-wider text-${primary}-900 uppercase mb-2`}>
+                      <label className="block font-sans text-xs font-semibold tracking-wider text-forest-900 uppercase mb-2">
                         Encrypted Instruction / Inquiry
                       </label>
                       <textarea
@@ -342,7 +339,7 @@ export default function InvestorPortalPage() {
                         rows="4"
                         value={advisoryMessage}
                         onChange={(e) => setAdvisoryMessage(e.target.value)}
-                        className={`w-full font-sans text-xs px-3 py-2.5 bg-white border border-line focus:outline-none focus:border-${primary}-600 resize-none`}
+                        className="w-full font-sans text-xs px-3 py-2.5 bg-white border border-line focus:outline-none focus:border-gold resize-none"
                         placeholder="Write secure transmission here..."
                       />
                     </div>
@@ -350,7 +347,7 @@ export default function InvestorPortalPage() {
                     <button
                       type="submit"
                       disabled={messageSent}
-                      className={`w-full font-sans text-xs font-semibold tracking-widest uppercase py-3 bg-${primary}-900 text-white hover:bg-${primary}-800 transition-colors focus:outline-none flex justify-center items-center gap-2`}
+                      className="w-full font-sans text-xs font-semibold tracking-widest uppercase py-3 bg-forest-900 text-cream hover:bg-forest-800 transition-colors focus:outline-none flex justify-center items-center gap-2"
                     >
                       {messageSent ? (
                         <>

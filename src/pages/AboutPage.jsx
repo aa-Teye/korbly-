@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { useTheme } from '../context/ThemeContext'
 
 const values = [
   {
@@ -38,9 +37,6 @@ const leadership = [
 ]
 
 export default function AboutPage() {
-  const { theme } = useTheme()
-  const primary = theme === 'navy' ? 'navy' : 'burgundy'
-
   return (
     <div>
 
@@ -51,16 +47,16 @@ export default function AboutPage() {
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80&auto=format&fit=crop')` }}
         />
         <div className="absolute inset-0"
-          style={{ background: `linear-gradient(90deg, ${theme === 'navy' ? 'rgba(12,30,54,0.80)' : 'rgba(74,14,31,0.80)'} 0%, ${theme === 'navy' ? 'rgba(12,30,54,0.40)' : 'rgba(74,14,31,0.40)'} 100%)` }}
+          style={{ background: 'linear-gradient(90deg, rgba(14,35,24,0.80) 0%, rgba(14,35,24,0.40) 100%)' }}
         />
         <div className="relative max-w-7xl mx-auto px-8 h-full flex items-center">
           <div className="text-white max-w-2xl">
-            <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-600`}>
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
               Our Firm
             </span>
             <h1 className="mt-4 font-serif font-light text-white leading-tight text-5xl md:text-6xl"
             >
-              Our Firm.
+              Systematic merchant banking.<br />Anchored in Africa.
             </h1>
             <p className="mt-6 font-sans text-base leading-relaxed font-light text-white/80 max-w-lg">
               Combining macro intelligence, quantitative transaction structuring, and sovereign advisory 
@@ -76,19 +72,19 @@ export default function AboutPage() {
           
           {/* Left Text */}
           <div>
-            <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-700`}>
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
               The Vision
             </span>
-            <h2 className={`mt-4 font-serif text-2xl font-medium text-${primary}-900 leading-snug mb-6`}>
+            <h2 className="mt-4 font-serif text-2xl font-medium text-forest-900 leading-snug mb-6">
               Built for Africa’s Future.
             </h2>
-            <p className="font-sans text-sm leading-relaxed text-muted mb-4">
+            <p className="font-sans text-sm font-light leading-relaxed text-muted mb-4">
               Africa has no shortage of available capital pools—with domestic institutional assets exceeding $775 billion 
               and foreign development allocations over $550 billion. The true bottleneck is structural: the lack of a 
               domestically-owned, compliance-grade merchant banking institution capable of bridging the gap between raw capital 
               and highly de-risked, exit-ready assets.
             </p>
-            <p className="font-sans text-sm leading-relaxed text-muted mb-6">
+            <p className="font-sans text-sm font-light leading-relaxed text-muted mb-6">
               Korbly was founded in 2026 to resolve this structural gridlock. Operating as a systematic merchant bank, 
               we combine deep economic causal modeling with quantitative private credit, thematic private equity, and sovereign advisory 
               to engineer long-term compounding mechanisms for our partners.
@@ -96,7 +92,7 @@ export default function AboutPage() {
             <div className="border-t border-line/60 pt-6">
               <Link
                 to="/approach"
-                className={`inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-${primary}-700 hover:text-${primary}-600 transition-colors duration-200 no-underline`}
+                className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase text-forest-700 hover:text-gold transition-colors duration-200 no-underline"
               >
                 Our Investment Approach
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -115,7 +111,7 @@ export default function AboutPage() {
             />
             {/* Structural Accent Frame */}
             <div
-              className={`absolute border border-${primary}-600/30 z-[-1] hidden md:block`}
+              className="absolute border border-gold/30 z-[-1] hidden md:block"
               style={{
                 bottom: '-20px',
                 right: '-20px',
@@ -129,13 +125,13 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values Section */}
-      <section className="bg-paper border-t border-b border-line">
+      <section className="bg-parchment border-t border-b border-line">
         <div className="max-w-7xl mx-auto px-8 py-14">
           <div className="text-center max-w-xl mx-auto mb-16">
-            <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-700`}>
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
               Operating Principles
             </span>
-            <h2 className={`mt-3 font-serif text-2xl font-medium text-${primary}-900`}>
+            <h2 className="mt-3 font-serif text-2xl font-medium text-forest-900">
               Our Core Values
             </h2>
           </div>
@@ -146,7 +142,7 @@ export default function AboutPage() {
                 key={value.title}
                 className="bg-white border border-line p-8 hover:shadow-lg transition-shadow duration-300 flex flex-col"
               >
-                <h3 className={`font-serif text-xl font-light text-${primary}-900 mb-4 border-b border-line/60 pb-3`}>
+                <h3 className="font-serif text-xl font-light text-forest-900 mb-4 border-b border-line/60 pb-3">
                   {value.title}
                 </h3>
                 <p className="font-sans text-xs font-light leading-relaxed text-muted flex-1">
@@ -162,10 +158,10 @@ export default function AboutPage() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-8 py-14">
           <div className="text-center max-w-xl mx-auto mb-16">
-            <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-700`}>
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
               Executive Committee
             </span>
-            <h2 className={`mt-3 font-serif text-2xl font-medium text-${primary}-900`}>
+            <h2 className="mt-3 font-serif text-2xl font-medium text-forest-900">
               Leadership & Partners
             </h2>
             <p className="font-sans text-xs text-muted font-light leading-relaxed mt-2">
@@ -178,7 +174,7 @@ export default function AboutPage() {
             {leadership.map((member) => (
               <div
                 key={member.name}
-                className="border border-line/60 hover:shadow-md transition-shadow duration-300 bg-paper group flex flex-col"
+                className="border border-line/60 hover:shadow-md transition-shadow duration-300 bg-cream/[0.1] group flex flex-col"
               >
                 {/* Profile Image */}
                 <div className="h-72 overflow-hidden relative border-b border-line/40">
@@ -192,10 +188,10 @@ export default function AboutPage() {
                 {/* Profile Content */}
                 <div className="p-7 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className={`font-serif text-lg font-light text-${primary}-900`}>
+                    <h3 className="font-serif text-lg font-light text-forest-900">
                       {member.name}
                     </h3>
-                    <span className={`font-sans text-xs font-semibold tracking-[0.1em] uppercase text-${primary}-700 block mt-1`}>
+                    <span className="font-sans text-[0.65rem] font-semibold tracking-[0.1em] uppercase text-gold block mt-1">
                       {member.role}
                     </span>
                     <p className="mt-4 font-sans text-xs font-light leading-relaxed text-muted">
@@ -203,9 +199,9 @@ export default function AboutPage() {
                     </p>
                   </div>
 
-                  <div className={`border-t border-line/40 pt-4 mt-6 flex justify-between items-center text-[0.65rem] text-${primary}-700 font-sans font-medium tracking-wide uppercase`}>
+                  <div className="border-t border-line/40 pt-4 mt-6 flex justify-between items-center text-[0.65rem] text-forest-700 font-sans font-medium tracking-wide uppercase">
                     <span>Ghana Office</span>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={`text-${primary}-600`}>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-gold">
                       <path d="M12 2a10 10 0 0 1 10 10c0 5.25-10 10-10 10S2 17.25 2 12A10 10 0 0 1 12 2z" />
                       <circle cx="12" cy="12" r="3" />
                     </svg>
@@ -218,14 +214,14 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Strip */}
-      <section className={`bg-${theme === 'navy' ? 'navy' : 'burgundy'}-900`}>
+      <section className="bg-forest-900">
         <div className="max-w-7xl mx-auto px-8 py-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <p className="font-serif font-light text-white text-2xl leading-snug">
             Looking to align with a disciplined capital partner?
           </p>
           <Link
             to="/contact"
-            className={`inline-flex items-center gap-3 font-sans text-sm px-6 py-3 bg-white text-ink hover:bg-white/90 transition-colors duration-200 no-underline whitespace-nowrap`}
+            className="inline-flex items-center gap-3 font-sans text-sm px-6 py-3 bg-gold text-forest-900 hover:bg-gold-light transition-all duration-200 no-underline whitespace-nowrap"
           >
             Contact Our Bankers
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

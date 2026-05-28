@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useTheme } from '../../context/ThemeContext'
 
 const slides = [
   {
@@ -23,8 +22,6 @@ const slides = [
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const { theme, toggleTheme } = useTheme()
-  const primary = theme === 'navy' ? 'navy' : 'burgundy'
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -34,7 +31,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className={`relative min-h-screen flex items-center overflow-hidden bg-${theme === 'navy' ? 'navy' : 'burgundy'}-900`}>
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-forest-900">
       
       {/* Background Images Slideshow with Crossfade */}
       {slides.map((slide, idx) => (
@@ -52,14 +49,14 @@ export default function Hero() {
       {/* Dynamic light gradient overlay */}
       <div className="absolute inset-0 z-[1]"
         style={{
-          background: `linear-gradient(105deg, ${theme === 'navy' ? 'rgba(12,30,54,0.75)' : 'rgba(74,14,31,0.75)'} 0%, ${theme === 'navy' ? 'rgba(12,30,54,0.48)' : 'rgba(74,14,31,0.48)'} 45%, ${theme === 'navy' ? 'rgba(19,41,75,0.30)' : 'rgba(107,21,48,0.30)'} 100%)`
+          background: 'linear-gradient(105deg, rgba(14,35,24,0.75) 0%, rgba(14,35,24,0.48) 45%, rgba(26,64,51,0.30) 100%)'
         }}
       />
 
       {/* Decorative vertical line */}
       <div className="absolute left-1/2 top-0 w-px h-full z-[1]"
         style={{
-          background: `linear-gradient(to bottom, transparent, ${theme === 'navy' ? 'rgba(38,74,130,0.12)' : 'rgba(165,32,80,0.12)'}, transparent)`
+          background: 'linear-gradient(to bottom, transparent, rgba(45,106,79,0.12), transparent)'
         }}
       />
 
@@ -69,8 +66,8 @@ export default function Hero() {
           <button
             key={slide.image}
             onClick={() => setCurrentSlide(idx)}
-            className={`w-2 h-2 rounded-full border border-${primary}-600 transition-all duration-300 focus:outline-none ${
-              idx === currentSlide ? `bg-${primary}-600 h-6` : 'bg-transparent hover:bg-white/40'
+            className={`w-2 h-2 rounded-full border border-gold transition-all duration-300 focus:outline-none ${
+              idx === currentSlide ? 'bg-gold h-6' : 'bg-transparent hover:bg-white/40'
             }`}
             title={`Show image for: ${slide.title}`}
             aria-label={`Go to slide ${idx + 1}`}
@@ -86,8 +83,8 @@ export default function Hero() {
           
           {/* Eyebrow */}
           <div className="flex items-center gap-4 mb-8">
-            <div className={`w-10 h-px bg-${primary}-600`} />
-            <span className={`font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-${primary}-600`}>
+            <div className="w-10 h-px bg-gold" />
+            <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-gold">
               Africa's First Systematic Merchant Bank
             </span>
           </div>
@@ -96,7 +93,7 @@ export default function Hero() {
           <h1 className="font-serif font-light text-white leading-tight tracking-tight text-5xl md:text-6xl"
           >
             Long-Term Thinking.<br />
-            <em className={`italic text-${primary}-600/80`}>Meaningful Outcomes.</em>
+            <em className="italic text-gold">Meaningful Outcomes.</em>
           </h1>
 
           {/* Lead text */}
@@ -106,27 +103,11 @@ export default function Hero() {
             experience, and alignment. Based in Accra, Ghana.
           </p>
 
-          {/* Theme Switcher Quick Toggle directly in Hero */}
-          <div className="mt-6 inline-flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 hover:border-white/30 transition-colors duration-200">
-            <button
-              onClick={toggleTheme}
-              className={`text-${primary}-600 font-sans text-[0.68rem] font-semibold uppercase tracking-wider flex items-center gap-2 focus:outline-none`}
-              title="Click to switch dynamic theme color"
-            >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="animate-spin-slow">
-                <path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z" />
-                <path d="M12 22V4c0 0 7 6.7 7 11a7 7 0 0 1-7 7z" fill="currentColor" />
-              </svg>
-              Theme: {theme === 'navy' ? 'Navy Blue' : 'Burgundy'}
-            </button>
-            <span className={`w-1.5 h-1.5 rounded-full bg-${primary}-600 animate-ping`} />
-          </div>
-
-          {/* CTA Buttons - Matching Screenshot */}
+          {/* CTA Buttons */}
           <div className="mt-10 flex flex-wrap gap-5">
             <Link
               to="/approach"
-              className="inline-flex items-center gap-4 font-sans text-sm px-6 py-3 bg-white text-ink hover:bg-white/90 transition-all duration-200 no-underline shadow-md"
+              className="inline-flex items-center gap-4 font-sans text-sm px-6 py-3 bg-gold text-forest-900 hover:bg-gold-light transition-all duration-200 no-underline shadow-md"
             >
               Our Approach
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -135,7 +116,7 @@ export default function Hero() {
             </Link>
             <Link
               to="/investor-portal"
-              className="inline-flex items-center gap-3 font-sans text-sm px-6 py-3 text-white/85 border border-white/20 hover:border-white/60 hover:text-white transition-all duration-200 no-underline"
+              className="inline-flex items-center gap-3 font-sans text-sm px-6 py-3 text-cream border border-cream/20 hover:border-gold hover:text-gold transition-all duration-200 no-underline"
             >
               Investor Portal
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -145,11 +126,11 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right - Philosophy Card - Styled Exactly like Screenshot */}
+        {/* Right - Philosophy Card */}
         <div className="lg:col-span-4 lg:col-start-9">
           <div
             className="p-10 border border-white/10 backdrop-blur-xl relative overflow-hidden"
-            style={{ background: theme === 'navy' ? 'rgba(12,30,54,0.78)' : 'rgba(74,14,31,0.78)' }}
+            style={{ background: 'rgba(14,35,24,0.78)' }}
           >
             {/* Card eyebrow */}
             <span className="font-sans text-[0.7rem] tracking-[0.22em] uppercase font-medium text-white/70">
@@ -178,7 +159,7 @@ export default function Hero() {
                   <span className="font-sans text-xs text-white/55">
                     {stat.label}
                   </span>
-                  <span className={`font-serif text-[1.4rem] font-medium text-${primary}-600/90`}>
+                  <span className="font-serif text-[1.4rem] font-medium text-gold">
                     {stat.value}
                     <span className="font-sans text-xs text-white/45 ml-1">
                       {stat.suffix}
@@ -192,10 +173,10 @@ export default function Hero() {
             <div className="mt-7 pt-5 border-t border-white/10">
               <Link
                 to="/approach"
-                className={`flex items-center justify-between w-full font-sans text-sm text-white/80 hover:text-${primary}-600 transition-colors duration-200 no-underline group`}
+                className="flex items-center justify-between w-full font-sans text-sm text-white/80 hover:text-gold transition-colors duration-200 no-underline group"
               >
                 <span>Learn more about our investment philosophy.</span>
-                <span className={`inline-flex items-center justify-center w-7 h-7 rounded-full border border-white/20 group-hover:border-${primary}-600 group-hover:text-${primary}-600 ml-4 flex-shrink-0 transition-colors`}>
+                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-white/20 group-hover:border-gold group-hover:text-gold ml-4 flex-shrink-0 transition-colors">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M5 12h14M13 5l7 7-7 7"/>
                   </svg>
@@ -209,7 +190,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-[2]">
-        <div className={`w-px h-10 bg-gradient-to-b from-${primary}-600/60 to-transparent animate-pulse`} />
+        <div className="w-px h-10 bg-gradient-to-b from-gold to-transparent animate-pulse" />
         <span className="font-sans text-[0.62rem] tracking-[0.2em] uppercase text-white/40">
           Scroll
         </span>

@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { useTheme } from '../../context/ThemeContext'
 
 const pillars = [
   {
@@ -30,8 +29,6 @@ const icons = [
 export default function Pillars() {
   const [visible, setVisible] = useState(false)
   const ref = useRef(null)
-  const { theme } = useTheme()
-  const primary = theme === 'navy' ? 'navy' : 'burgundy'
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,7 +40,7 @@ export default function Pillars() {
   }, [])
 
   return (
-    <section className="bg-paper border-t border-b border-line">
+    <section className="bg-cream border-t border-b border-line">
       <div
         ref={ref}
         className="max-w-7xl mx-auto px-8 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
@@ -58,11 +55,11 @@ export default function Pillars() {
             }`}
             style={{ transitionDelay: i * 100 + 'ms' }}
           >
-            <div className={`text-${primary}-700 shrink-0 mt-1`}>
+            <div className="text-forest-700 shrink-0 mt-1">
               {icons[i]}
             </div>
             <div>
-              <h3 className={`font-sans text-sm font-semibold text-${primary}-900 tracking-wide`}>
+              <h3 className="font-sans text-sm font-semibold text-forest-900 tracking-wide">
                 {pillar.title}
               </h3>
               <p className="mt-2 font-sans text-xs font-light leading-relaxed text-muted">
